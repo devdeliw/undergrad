@@ -1,2 +1,2 @@
 # undergrad
-Lecture notes
+lecture notes
