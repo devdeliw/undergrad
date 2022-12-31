@@ -163,5 +163,5 @@ Every custom configuration is outlined in the UltiSnips author's github @ https:
 
 Now, making "beg" instantly autocomplete to an entire environment skeleton is not very wise. To learn how to use UltiSnips snippets effectively, I suggest creating and growing **your own** personal snippet keybinds as you progress in TeX, rather than trying to learn someone else's custom keybinds from online. 
 
-Now you should have a fast and effective way to write and compile TeX code using Vim, VimTex, Skim, and UltiSnips!
+Now you should have a fast and effective way to write and compile TeX using Vim, VimTeX, Skim, and UltiSnips!
 
