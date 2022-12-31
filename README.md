@@ -25,7 +25,7 @@ call plug#begin()
 call plug#end()
 ```
 
-If you want to install any other plugins using vim-plug they have to be inside the `call plug#begin()...call plug#end()` environment as well. 
+To install any other plugins using vim-plug they have to be inside the `call plug#begin()...call plug#end()` environment as well. 
 
 Finally, open vim, and type in command mode `:PlugInstall` to complete the VimTex installation.
 
@@ -83,7 +83,7 @@ With just four lines of settings in the .vimrc file and one line in the Skim pre
 
 The one draw back of TeX is having to repeatedly write simple commands like `\begin{}...\end{}`. This can be tedious and cause compilation errors.
 
-To work around this, programmers use UltiSnips to pre-program "snippets," i.e. shorthand text to autofill common commands in TeX. For example, using UltiSnips, if you just type `beg` and click ⇥ (tab key), you can autofill with the following:
+To work around this, programmers use UltiSnips to pre-program "snippets," i.e. shorthand text to autofill common commands in TeX. For example, using UltiSnips, simply typing `beg` and clicking ⇥ (tab key), could autofill with the following:
 
 ```TeX
 \begin{|}
@@ -91,11 +91,11 @@ To work around this, programmers use UltiSnips to pre-program "snippets," i.e. s
 \end{}
 ```
 
-and have the cursor inside the `{}` block to quickly continue the writing. Clicking ⇥ (tab) again will move the cursor directly inside the environment allowing you to write TeX more efficiently.
+and have the cursor inside the `{}` block to quickly continue the writing. Clicking ⇥ (tab) again will move the cursor directly inside the environment for simpler and quicker programming.
 
 ## Install UltiSnips 
 
-To install UltiSnips, you need a working installation of Python 3. In addition, Vim must be compiled with the python3 feature enabled - you can test this with `:echo has("python3")`, which will return `1` if it is enabled and `0` if it isnt.
+UltiSnips requires a working installation of Python 3. In addition, Vim must be compiled with the python3 feature enabled - you can test this with `:echo has("python3")`, which will return `1` if it is enabled and `0` if it isnt.
 
 Using vim-plug, add a Plug for UltiSnips:
 
