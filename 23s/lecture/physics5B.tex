@@ -748,13 +748,12 @@ vector function is a 3 dimensional one.
 The name \textit{curl} reminds us that the vector field with a nonezero curl
 has a circulation, or vorticity. Maxwell used the name \textit{rotation}\\
 
-
 \begin{figure}
   \centering
   \includegraphics[width = 15cm]{screenshot 5.png}
   \caption{Some Vector Relations Summarized}
 \end{figure}
-\newpage
+
 \section{Electric Fields Around Conductors}
 
 The electrical difference between a good conductor and a good insulator is as
@@ -853,7 +852,27 @@ constants. In particular, the difference between our two solutions, $\varphi
 W(x,y,z) = \varphi(x,y,z) - \psi(x,y,z)
 .\] 
 
- 
+Of course, $W$ does not satisfy the boundary conditions. In fact, the surface
+of every conductor $W$ is zero, because $\psi$ and $\varphi$ take on the same
+value, $\varphi_k$ at the surface of a conductor $k$. Thus, $W$ is a solution
+of \textit{another} electrostatic problem, one with the same conductors but
+with all conductors held at zero potential. \\
+
+We can now demonstrate easily that 
+
+\begin{theorem}
+  In the space inside a hollow conductor of any shape whatever, if that space
+  itself is empty of charge, the electric field is zero.
+\end{theorem} 
+
+This is true whatever the field may be outside the conductor. This is because
+the potential function inside the box, $\varphi(x,y,z)$, must satisfy Laplace's
+Equation. The entire boundary of a conductor, is an equipotential, so we have
+$\varphi = \varphi_0$, a constant everywhere on the boundary. Since $\varphi$
+is a constant, \textbf{E} $= 0$, since $\vec{E} = -\nabla \varphi$. 
+
+
+
 
 
 \end{document}
