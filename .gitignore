@@ -1,1 +1,10 @@
 **/.DS_Store
+**/*.aux
+**/*.fls
+**/*.log
+**/*.pdf
+**/*.toc
+**/*.fdb_latexmk
+**/*.synctex.gz
+**/*.tex.swo
+**/*.tex.swp
