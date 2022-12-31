@@ -131,7 +131,7 @@ endsnippet
 
 We may want to write code to allow us to actually _type_ in these code snippets as well; for example writing different `\begin{}...\end{}`, or inserting an image using `\includegraphics{<image.png>}`.
 
-To do this, UltiSnips allows user to insertcertain `$1,$2,...,$n` commands into the code snippets to tell TeX where the cursor should go after pressing ⇥ n times.
+To do this, UltiSnips allows user to insert certain `$1,$2,...,$n` commands into the code snippets to tell TeX where the cursor should go after pressing ⇥ n times.
 
 For example, the snippet
 
