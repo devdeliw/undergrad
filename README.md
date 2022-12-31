@@ -167,3 +167,4 @@ Now, making "beg" instantly autocomplete to an entire environment skeleton is no
 
 Now you should have a fast and effective way to write and compile TeX using Vim, VimTeX, Skim, and UltiSnips!
 
+This note-taking setup was heavily inspired by Gilles Castel's [article](https://castel.dev/post/lecture-notes-1/). He provides many examples of useful snippets for mathematics note-taking, as well as a way to include math figures seamlessly as well. 
