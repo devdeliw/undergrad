@@ -1,7 +1,7 @@
 # My approach to taking notes
 I take lecture notes using Vim, VimTex, Skim, and UltiSnips. 
 
-- **Vim** is a popular IDE for TeX progammers.
+- **Vim** is a popular IDE for TeX progammers. 
 
 - **VimTeX** is a Vim plugin to read and compile TeX code from Vim and convert into PDF format. 
 
@@ -13,11 +13,13 @@ I take lecture notes using Vim, VimTex, Skim, and UltiSnips.
 
 ## Install VimTeX
 
+This tutorial assumes that a working version of Vim has been installed already. Vim can be downloaded [here](https://www.vim.org/download.php).
+
 Before installing VimTeX, install **vim-plug manager** using [these instructions](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim). 
 
 Next locate or create the `.vimrc` in your home directory. See an [example](https://gist.github.com/simonista/8703722) of a typical .vimrc file.
 
-Next, to install the VimTeX plugin add the following code snippet inside the `.vimrc` file: 
+Next, to install the VimTeX plugin add the following code snippet inside the .vimrc file: 
 
 ```bash
 call plug#begin()
@@ -25,7 +27,7 @@ call plug#begin()
 call plug#end()
 ```
 
-To install any other plugins using vim-plug they have to be inside the `call plug#begin()...call plug#end()` environment as well. 
+To install any other plugins using vim-plug, the `Plug `statement has to be within the `call plug#begin()...call plug#end()` environment as well. 
 
 Finally, open vim, and type in command mode `:PlugInstall` to complete the VimTex installation.
 
@@ -33,7 +35,7 @@ Though it is possible to open the PDF file in one of the many commercially avail
 
 ## Install Skim
 
-On MacOS, I will outline how to install Skim with VimTex. For Windows users, a tutorial on how to sync Zathura with VimTeX can easily be found online. However, Skim also works with Windows.
+This tutorial explains how to install Skim as the PDF viewer for VimTeX. For Windows users, a tutorial on how to sync Zathura with VimTeX can easily be found online. However, Skim also works with Windows.
 
 To install Skim, run in terminal:
 
@@ -43,7 +45,7 @@ $ brew install --cask skim
 
 ## Connect VimTeX and Skim
 
-In the `.vimrc` file, add the followng code snippets to enable VimTeX to talk to Skim from within Vim and display the output PDF.
+In the `.vimrc` file, add the following code snippets to enable VimTeX to talk to Skim from within Vim and display the output PDF.
 
 Identify the default TeX file format:
 
@@ -108,7 +110,7 @@ call plug#end()
 
 Next, in vim, run `:PlugInstall` to finish installing UltiSnips.
 
-### Making snippets
+### Developing snippets
 
 Small programming in UltiSnips is required to add snippets.
 
@@ -143,7 +145,7 @@ snippet beg "Begin/End"
 $3
 ```
 
-allows the user to simply type "beg" + ⇥ to generate a `\begin{}..\end{}` environment skeleton. The `$1` location is where the cursor will _first_ go, allowing a user to quickly specify the environment. Since both `\begin{$1}` and `\end{$1}` have `$1`, both `{}` are filled at the same time. After the environment is defined, pressing ⇥, places the cursor at position `$2`; pressing the tab again places the cursor at `$3`, and so on. 
+allows the user to type "beg" + ⇥ to generate the `\begin{}..\end{}` environment skeleton. In addition, the `$1` location is where the cursor will _first_ go, allowing a user to quickly specify the environment. Since both `\begin{$1}` and `\end{$1}` have `$1`, both `{}` are filled at the same time. After the environment is defined, pressing ⇥, places the cursor at position `$2`; pressing the tab again places the cursor at `$3`, and so on. 
 
 There is also a `[custom configurations]` in the UltiSnips snippet template. Custom configurations allow for autocompleting snippets without having to press ⇥, and manyother useful features.
 
@@ -157,9 +159,9 @@ snippet beg "Begin/End" iA
 $3
 ```
 
-but instead with an `iA` beside the snippet name, allows the user to simply type "beg," and it will autocomplete the snippet without even having to press ⇥. 
+but instead with an `iA` beside the `"Begin/End"` snippet name allows the user to simply type "beg," to immediately autocomplete the snippet without having to press ⇥. 
 
-Every custom configuration is [outlined](https://github.com/SirVer/ultisnips) in the UltiSnips author's github. 
+Every custom configuration is outlined in the UltiSnips author's [github](https://github.com/SirVer/ultisnips). 
 
 Now, making "beg" instantly autocomplete to an entire environment skeleton is not very wise. To learn how to use UltiSnips snippets effectively, I suggest creating and growing **your own** personal snippet keybinds as you progress in TeX, rather than trying to learn someone else's keybinds from online. 
 
