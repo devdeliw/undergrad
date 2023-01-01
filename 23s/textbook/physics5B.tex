@@ -869,7 +869,182 @@ This is true whatever the field may be outside the conductor. This is because
 the potential function inside the box, $\varphi(x,y,z)$, must satisfy Laplace's
 Equation. The entire boundary of a conductor, is an equipotential, so we have
 $\varphi = \varphi_0$, a constant everywhere on the boundary. Since $\varphi$
-is a constant, \textbf{E} $= 0$, since $\vec{E} = -\nabla \varphi$. 
+is a constant, \textbf{E} $= 0$, since $\vec{E} = -\nabla \varphi$. This is the
+basis of electrical shielding. For most practical purposes, even just a grid of
+a conductor with holes in the walls suffices, which is known as
+a \textit{faraday cage}
+
+\subsection{Some Simple Systems of Conductors}
+
+\subsubsection{Concentric Metal Spheres} 
+
+We begin with two concentric metal spheres, of radii $R_1$ and $R_2$, carrying
+total charges $Q_1$ and $Q_2$ respectively. It is obvious from symmetry that
+the charge on each sphere must be distributed uniformly. \\
+
+\begin{center}
+\includegraphics[width = 5cm]{screenshot 2.png}
+\end{center}
+
+Outside the larger sphere the field is that of a point charge of magnitude $Q_1
++ Q_2$, so $\varphi_1$, the potential of the outer sphere, is 
+\[
+\frac{Q_1+Q_2}{R_1}
+.\] 
+
+The potential of the inside the total sphere is given by 
+
+\begin{align*}
+  \varphi_2 &= \frac{Q_1+Q_2}{R_1} + \int_{R_1}^{R_2} -\frac{Q_2}{r_2} \, dr
+= \frac{Q_1}{R_1} + \frac{Q_2}{R_1} + \frac{Q_2}{R_2} - \frac{Q_2}{R_1} \\
+            & = \frac{Q_1}{R_1} + \frac{Q_2}{R_2}       
+\end{align*}
+
+We could have found $\varphi_2$ by simple superposition as well. $\frac{Q_1}{R_1}$
+is the potential inside the larger sphere if it alone is present,
+$\frac{Q_2}{R_2}$ , the potential inside the inner sphere if it alone is
+present. If the spheres carried equal and opposite charges, $Q_1 = -Q_2$, only
+the space between them would have a nonvanishing electric field.
+
+\subsubsection{Conductor on $xy$ Plane close to charge}
+
+Suppose the $xy$ plane is the surface of a conductor extending out to infinity.
+Let's assign this plane the potential zero. Now bring a positive charge $Q$ and
+locate it $h$ cm above the plane. 
+
+
+\begin{center}
+\includegraphics[width = 7cm]{screenshot 9.png}
+\end{center}
+
+What sort of field and charge distribution can we expect? We expect the
+positive charge $Q$ to attract negative charge, but we hardly expect the
+negative charge to pile up in an infinitely dense concentration at the foot of
+the perpendicular from $Q$. Why not? Also we remember that the electric field
+is always perpendicular to the surface of a conductor. Very near the point
+charge $Q$, on the other hand, the presence of the conducting plane can make
+little difference; the field lines must \textit{start out} from $Q$ as if they
+were leaving a point charge radially. So we might expect the electric field
+lines to look something like below: 
+
+\begin{center}
+\includegraphics[width = 7cm]{screenshot 10.png}
+\end{center}
+
+We find an easily soluble problem whose solution, or a piece of it, can be made
+to fit the problem at hand. Here the easy problem is that of two equal and
+opposite point charges, $Q$ and $-Q$. On the plane which bisects the line
+joining the two charges, the plane indicated in the cross section by line $AA$
+below: 
+
+\begin{center}
+\includegraphics[width = 7cm]{screenshot 11.png}
+\end{center}
+
+The electric field is everywhere perpendicular to the plane. If we make the
+distance of $Q$ from the original problem agree with the distance $h$ in our
+original problem, the upper half of the field in the image meets all our
+requirements. The field is perpendicular to the plane of the conductor, and in
+the neighborhood of $Q$ it approaches the field of a point charge. \\
+
+The boundary conditions here are not quite those that figured in our uniqueness
+theorem in the last section. The potential of the conductor is fixed, but we
+have in the system a point charge at which the potential approaches infinity.
+We can treat the point charge as a small spherical conductor on which the total
+charge $Q$ is fixed. The figure below shows the final solution for the field
+above the plane: 
+
+\begin{center}
+\includegraphics[width = 15cm]{screenshot 12.png}
+\end{center}
+
+We can calculate the field strength and direction at any point by going back to
+the two-charge problem, with both $Q$ and $-Q$, and using Coulomb's Law. \\
+Consider a point on the surface, a distance $R$ from the origin. The square of
+its distance from $Q$ is $r^2 + h^2$ and the $z$ component of the field of $Q$,
+at this point, is $-Q\cos\theta / (r^2 + h_2)$. The "image charge," $-Q$, below
+the plane contributes an equal $z$ component. Thus, the electric field is given
+by: 
+
+\[ E_z = \frac{-2Q}{(r^2+h^2)} \cdot \frac{h}{(r^2 + h^2)^{\frac{1}{2}}}
+= \frac{-2Qh}{(r^2 + h^2)^\frac{3}{2}} \]
+
+This tells us that the surface charge density $\sigma$: 
+\[
+  \sigma = \frac{E_z}{4\pi} = \frac{-Qh}{2\pi(r^2 + h^2)^{3/2}}
+\] 
+Let us calculate the total amount of charge on the surface by integrating over
+the distribution: 
+
+\[
+\int_{0}^{\infty} \sigma \cdot 2\pi r \, dr = -Q \int_{0}^{\infty}
+\frac{hr}{(h^2 + r^2)^{3/2}} \, dr = -Q  
+\] 
+That result was to be expected. It means that all the flux leaving the charge
+$Q$ ends on the conducting plane. \\
+There is one puzzling point. What if the plane conductor had been completely
+uncharged before the charge $Q$ was put in place above it? How can the
+conductor now exhibit a net charge $-Q$? The answer is that the compensating
+charge $+Q$ in amount, must be distributed over the whole plane. To see what is
+going on here, imagine that the conducting plane is actually a metal disk, not
+infinite, but finite and with a radius $R >> h$. If a charge $+Q$ were to be
+spread uniformly over this disk, \textit{on both sides}, the resulting surface
+density would be $\frac{Q}{2\pi R^2}$, which would cause an electric field of
+strength $\frac{2Q}{R^2}$ normal to the plane of the disk. 
+
+
+Since our disk is a conductor, on which charge can move, the charge density and
+the resulting field strength will be even \textit{less} than$ \frac{2Q}{R^2}$
+near the center of the disk because of the tendency of the charge to spread out
+toward the rim. In any case, the field of this distribution is smaller in order
+of magnitude by a factor $\frac{h^2}{R^2}$ than the field described by $E_z$.
+As long as $R>>h$ we were justified. The image below shows in separate plots
+the surface charge density $\sigma$ that we calculated above. 
+
+\begin{center}
+\includegraphics[width = 7cm]{screenshot 13.png}
+\end{center}
+
+Here we have made $R$ not very much bigger than $h$ to show both distributions
+clearly. Notice that the compensating positive charge has arranged itself in
+exactly the same way on the top and bottom surfaces of the disk, as if it were
+utterly ignoring the pile of negative charge in the middle of the upper
+surface. It is free to do so, for the field of that negative charge
+distribution and that of the point charge $Q$ that induced it has a horizontal
+component of zero at the surface of the disk. \\
+
+The isolated conducting disk mentioned above belongs to another class of
+problems, a class which includes any isolated conductor in the shape of
+a spheroid, an ellipsoid of revolution. The field lines of these surfaces are
+hyperbolas. The equipotentials are oblate ellipsoids of revolution enclosing
+teh disk. The potential $\phi$ of the disk itself, relative to infinity, turns
+out to be 
+
+\[
+\phi_0 = \frac{(\pi / 2) Q}{a} 
+\] 
+where $Q$ is the total charge of the disk and $a$ is its radius. 
+
+\begin{center}
+\includegraphics[width = 10cm]{1.png}
+\end{center}
+
+Imagine we could plate this spheroid with copper and deposit charge $Q$ on it.
+Then the field shown outside it already satisfies the boundary conditions:
+electric field normal to surface; total flux $4 \pi Q$. It is \textit{a}
+solution, and in view of the uniqueness theorem, it must be \textit{the}
+solution for an isolated charged conductor of that particular shape. All we
+need to do is erase the field lines \textit{inside} the conductor. \\
+
+This suggests a general strategy. Given the solution for any electrostatic
+problem with the equipotentials located, we can extract from it the solution
+for any other system from the first by copper-plating one or more equipotential
+surfaces. I like to call this strategy "a solution in search of a problem." The
+situation was well described by \textit{Maxwell}: "it appears, therefore, that
+what we should naturally call the inverse problem of determining the forms of
+the conductors when the expression for the potential is given is more
+manageable than the direct problem of determining the potential when the form
+of the conductors are given." 
 
 
 
