@@ -20,8 +20,9 @@
 
 %pgfplots & tikz
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
 \usepackage{comment}
-
+\usetikzlibrary{arrows}
 %Figures
 \usepackage{float}
 \usepackage{caption}
@@ -139,7 +140,7 @@ Two stationary electric charges repel or attract each other with a force proport
 
 \[ k = 8.988 \times 10^9 \] 
  
-It is customary to introduce a constant $e_0$ with which the same equation is written \\ 
+It is customary to introduce a constant $\epsilon_0$ with which the same equation is written \\ 
 
 \[ \vec{F} = \frac{1}{4\pi \epsilon_0}\frac{q_1q_2}{r^2}\hat{r} \] \\
 
@@ -248,7 +249,8 @@ As an example, the flux of a point charge $q$ through a sphere of a radius $r$ c
 The total flux through a closed surface is 0, and the flux of an electric field through \textit{any} closed surface enclosing a point charge $q$ is $4\pi q$ 
 \end{theorem} 
 
-The situation is now ripe for superposition. Flux is an additive quantity is away. If we have a number of sources $q_1,q_2,...,q_N$, the fields of which would be $E_1,E_2,...,E_N$, the flux $\Phi$ through some surface $S$ in the actual field can be written as \\
+The situation is now ripe for superposition. Flux is an additive quantity as
+well. If we have a number of sources $q_1,q_2,...,q_N$, the fields of which would be $E_1,E_2,...,E_N$, the flux $\Phi$ through some surface $S$ in the actual field can be written as \\
 
 \[ \Phi = \int_S \vec{E} \cdot d\vec{a} = \int_S (E_1 + E_2 + ... + E_N) \cdot d\vec{a} \] \\
 
@@ -315,33 +317,30 @@ A long, straight, charged wire, if we neglect thickness, can be characterized by
 
 The symmetry guarantees that the field is radial, so the flux through the ends of the cylinder are zero. The flux through the cylindrical surface is simply the area, $2\pi rL$, times $E_r$, the field at the surface. Since the charge enclosed by the surface is just $\lambda L$, Gauss's Law gives us \\
 
-\[ \Phi = \frac{\lambda L}{\epsilon_0} = 2\pi r L E_r = 4 \pi \lambda L  \]  
-
-Therefore, \\
-
-\[ E_r = \frac{2 \lambda}{r} \] 
+\begin{align*}
+ & \phi = \frac{\lambda L}{\epsilon_0} = \oiint \vec{E} \cdot d\vec{A} \\
+ & |\vec{E}| \cdot (2 \pi r L) = \frac{\lambda L}{\epsilon_0} \\
+ & |\vec{E}| = \frac{\lambda}{2\pi r \epsilon_0}
+\end{align*}  
 
 \subsection{Field of an Infinite Flat Sheet of Charge}
 
-\vspace{20px} 
-
+\vspace{20px}
 \begin{center}
-\includegraphics[width = 50mm]{ss.png}
+\includegraphics[width = 50mm]{2.png}
 \end{center} 
-
-
 \vspace{20px}
 
 Let the surface charge density be denoted by $\sigma$, and let there exist a cylinder, perpendicular through the infinite sheet, with sides $P'$ and $P$ on either side. The outward flux is found only one the ends. Therefore
 
-\[ AE_P + AE_{P'} = 2AE_P \] 
+\[\phi =  AE_P + AE_{P'} = 2AE_P =\oiint \vec{E} \cdot \vec{a} \] 
 
 The charge enclosed is $A\sigma$ Hence, 
 
 \begin{align*}
-&\oiint \vec{E} \cdot dA = \frac{q_{enc}}{\epsilon_0} \\ 
-&\vec{E} A = \frac{\sigma A}{\epsilon_0} \\
-&\vec{E} = \frac{\sigma A}{\epsilon_0} 
+&\oiint \vec{E} \cdot dA = \frac{Q}{\epsilon_0} \\ 
+&2AE_P = \frac{\sigma A}{\epsilon_0} \\
+&E_P = \frac{\sigma A}{2A \epsilon_0} = \frac{\sigma}{2 \epsilon_0}
 \end{align*} \\
 
 We see that the field strength is independent of $r$, thus if one were to build an infinite flat sheet of charge, the electric field would permeate throughout the universe at the exact same strength. 
@@ -410,6 +409,111 @@ The electric field we use, which will not be justified (it's in the textbook) is
 \vspace{10px} 
 
 \[ 10^{35} >> 10^{-29} \]
+
+\subsubsection{1.2}
+
+At what distance below a proton would the upward force on an electron (electron mass $\approx 9.1 \times 10^{-31}$ kg) equal the electron's weight? 
+\vspace{20px}
+
+
+\textbf{Coulomb's Law} 
+
+\begin{align*}
+  \sum F_y &= F_e - F_g = \vec{0}\\
+  F_g &= F_e = 9.1 \times 10^{-31} \times 9.8 \\
+  &\frac{k(1.6\times 10^{-19})^2}{r^2} = 8.9 \times 10^{-30} \\
+  r &= 5.08m 
+\end{align*}
+\newpage
+\subsubsection{1.4}
+
+At each corner of a square is a particle with charge $q$. Fixed at the center
+of the square is a point charge of opposite sign, with magnitude $Q$. What
+value must Q have to make the total force on each of the four particles zero?
+With Q set at that value, the system, in the absence of other forces, is in
+equilibrium. Is that equilibrium stable? 
+
+\begin{center}
+\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\clip(-1.8912024702657917,-1.699087826739117) rectangle (6.216784961751652,4.557617645181432);
+\draw [line width=2pt] (0,3)-- (3,3);
+\draw [line width=2pt] (3,3)-- (3,0);
+\draw [line width=2pt] (3,0)-- (0,0);
+\draw [line width=2pt] (0,0)-- (0,3);
+\begin{scriptsize}
+\draw [fill=xdxdff] (0,3) circle (2.5pt);
+\draw[color=xdxdff] (0.06676353498919485,3.155036227955512) node {$q_{1}$};
+\draw [fill=ududff] (3,3) circle (2.5pt);
+\draw[color=ududff] (3.066467863552924,3.155036227955512) node {$q_{2}$};
+\draw[color=black] (1.522686974794185,2.973045797979889) node {$f$};
+\draw [fill=xdxdff] (3,0) circle (2.5pt);
+\draw[color=xdxdff] (3.066467863552924,0.1553318993917982) node {$q_{4}$};
+\draw[color=black] (2.92213062598605,1.5736021467880312) node {$g$};
+\draw [fill=uuuuuu] (0,0) circle (2pt);
+\draw[color=uuuuuu] (0.06676353498919485,0.14278083525554836) node {$q_{3}$};
+\draw[color=black] (1.522686974794185,0.17415849559617297) node {$h$};
+\draw[color=black] (0.12324332360231946,1.5736021467880312) node {$i$};
+\draw [fill=ududff] (1.5,1.5) circle (2.5pt);
+\draw[color=ududff] (1.5477891030666846,1.6363574674692805) node {$Q$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+The resultant force on a charge $q_0$ from other charges is given by 
+
+\[
+  \vec{F} = \sum_{j=1}^{N} \frac{q_0q_j}{r_{0j}^2} 
+\]
+
+Pick charge $q_2$ and let us sum all the forces on the $x$ axis
+
+\[
+F_{21} = \frac{kq_1q_2}{a_2}
+\]
+
+Charge $q_3$ sits a distance $a\sqrt{2}$ and gives a repulsive force upward
+and to the right at 45 degrees. 
+
+\[
+  F_{23} = \frac{kq_2q_3}{(a\sqrt{2})^2} = \frac{kq_1q_3}{2a^2}
+\] 
+\[
+  F_{23x} + F_{23} \cos 45 = \frac{\sqrt{2}kq_2q_3}{4a^2}
+\] 
+
+Charge $q_4$ gives a repulsive force only along the $y$ axis, and does not
+contribute anything in the x. That leaves only $Q$ a distance
+$\frac{\sqrt{2}a}{2}$ away. 
+
+\[
+  F{2Q} = -\frac{kq_2Q}{(\sqrt{2}a/2)^2} = -\frac{2kq_2Q}{a^2}
+\] 
+\[
+  F{2Qx} = F_{2Q} \cos 45 = \frac{\sqrt{2}}{2}F_{2Q}
+  = -\frac{\sqrt{2}kq_2Q}{a^2}
+\] 
+
+ 
+
+Now we just need to add together all the $x$ components and set the result
+equal to zero to obtain $Q$. \\
+
+We end up obtaining: 
+
+\[
+  Q = q\left[\frac{1+\frac{\sqrt{2}}{4}}{\sqrt{2}}\right]
+  = q\left[\frac{\sqrt{2}}{2} + \frac{1}{4}\right] \approx 0.957q
+\]
+
+We are able to ignore the effects of the $y$ axis forces because the horizontal
+and vertical components are equivalent. This is known as four-fold symmetry.
+This means that the net force along $x$ must be the same as $y$, in other words
+if its equilibrium on  $x$, it's equilibrium on  $y$. 
+
+
 
 \newpage
 
@@ -495,7 +599,7 @@ Thus, if we identify $\vec{E} = - \nabla \varphi$, both equations become identic
  
  Notice the difference between this integral and the integral for the electric field of a charge distribution. Here we have $r$ in the denominator, not $r^2$, and the integral is a scalar not a vector. From the scalar potential function we can always find the electric field 
  
- \subsection{Potential of two point charges} 
+ \subsubsection{Potential of two point charges} 
  
  Consider a very simple example, the potential of two point charges. A positive charge of 12 esu is located 3cm away from a negative charge of -6 esu. The potential at any point in space is the sum of the potentials due to each charge alone. No vector addition is involved here, only the algebraic addition of scalar quantities. 
 
@@ -511,7 +615,7 @@ Therefore the potential at a point 6cm from the positive charge and 5cm from the
 k (\frac{12}{6} - \frac{6}{5}) = 0.8 \times k
 \]
 
-\subsection{Potential of a long charged wire} 
+\subsubsection{Potential of a long charged wire} 
 
 To see how to calculate electric potential for an infinitely long charged wire, let us arbitrarily choose a reference point $P_1$ at a distance $r_1$ from the wire. Then to carry a charge from $P_1$ to any other point $P_2$ at a distance $r_2$, requires the work per unit positive charge 
 
@@ -528,7 +632,7 @@ The constant, $2\lambda \ln r_1$ in this case, has no effect when we take $-\nab
 
 \[ -\nabla \varphi = -\hat{r} \frac{d \varphi}{dr} = \frac{2\lambda}{r} \hat{r} \] \\
 
-\subsection{Potential of a Uniformly Charged Disk} 
+\subsubsection{Potential of a Uniformly Charged Disk} 
 
 As a start, let us find the potential at some point $P_1$ on the axis of symmetry. 
 
@@ -1038,13 +1142,9 @@ need to do is erase the field lines \textit{inside} the conductor. \\
 
 This suggests a general strategy. Given the solution for any electrostatic
 problem with the equipotentials located, we can extract from it the solution
-for any other system from the first by copper-plating one or more equipotential
-surfaces. I like to call this strategy "a solution in search of a problem." The
-situation was well described by \textit{Maxwell}: "it appears, therefore, that
-what we should naturally call the inverse problem of determining the forms of
-the conductors when the expression for the potential is given is more
-manageable than the direct problem of determining the potential when the form
+for any other system from the first by copper-plating one or more equipotential surfaces. I like to call this strategy "a solution in search of a problem." The situation was well described by \textit{Maxwell}: "it appears, therefore, that what we should naturally call the inverse problem of determining the forms of the conductors when the expression for the potential is given is more manageable than the direct problem of determining the potential when the form
 of the conductors are given." 
+
 
 
 
