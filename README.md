@@ -7,7 +7,7 @@ I take lecture notes using Vim, VimTex, Skim, and UltiSnips.
 
 - **Skim** is a PDF Viewer for MacOS. 
 
-- **UtilSnips** is a way to write short-hand TeX (i.e. write your notes much faster). Note: this requires python.
+- **UltiSnips** is a way to write short-hand TeX (i.e. write your notes much faster). Note: this requires python.
 
   
 
