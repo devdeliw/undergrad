@@ -9,7 +9,6 @@
 \newtheorem{theorem}{Theorem}		        % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 	
 %images
-
 \graphicspath{{img/}}	
 	
 	
@@ -166,9 +165,11 @@ adding them to produce the force on any one of the particles is known as \textit
 
 \vspace{20px}
 
-\begin{center}
+\begin{figure}[!hb]
+  \centering
 \includegraphics[width = 50mm]{ss3.png}
-\end{center} 
+\caption{conversion of a photon to an electron and positron}
+\end{figure}
 
 
 \vspace{20px}
@@ -207,16 +208,18 @@ This is known as the \textit{electric potential energy} of this particular syste
 As an example, let us calculate the potential energy of an arrangement of eight
 negative charges at the corners of a cube, with a positive charge in the center
 of the cube, with sides length $b$. Suppose each negative charge is an electron
-(-e) and the central particle carries a charge $2e$. Summing over all pairs, we have \\ 
+(-e) and the central particle carries a charge $2e$.
 
+\begin{figure}[!hb]
+  \centering
+  \includegraphics[scale = 0.4]{ss4.png}
+  \caption{arrangement of charges}
+\end{figure}
 
-\begin{center}
-\includegraphics[scale = 0.4]{ss4.png}
-\end{center} 
-
+Summing over all charges, 
 
 \[ U = \frac{8 (-2e^2)}{\frac{\sqrt{3}}{2}b} + \frac{12e^2}{b}
-+ \frac{12e^2}{\sqrt{2}b} + \frac{4e^2}{\sqrt{3}b} = \frac{4.32e^2}{b} \] \\
++ \frac{12e^2}{\sqrt{2}b} + \frac{4e^2}{\sqrt{3}b} = \frac{4.32e^2}{b} \] 
 
 A simpler way of calculating potential energy is \\
 
@@ -230,9 +233,11 @@ A simpler way of calculating potential energy is \\
 
 \vspace{20px}
 
-\begin{center}
-\includegraphics[width = 50mm]{ss7.png}
-\end{center} 
+\begin{figure}[!hb]
+  \centering
+  \includegraphics[width = 50mm]{ss7.png}
+  \caption{electric field diagram}
+\end{figure}
 
 
 \vspace{20px}
@@ -306,14 +311,14 @@ given; with Gauss's Law we can determine how much charge is in any region if the
 \subsection{Field of a Spherical Charge Distribution} 
 
 \vspace{20px}
-
-\begin{center}
-\includegraphics[width=50mm]{ss6.png}
-\end{center}
+\begin{figure}[!hb]
+  \centering
+  \includegraphics[width=50mm]{ss6.png}
+  \caption{spherical charge distribution} 
+\end{figure}
 
 
 \vspace{20px}
-
 We can use Gauss's Law to find the electric field of a spherically symmetrical
 distribution of charge, where $\rho$ depends only on the radius from a central point \\
 
@@ -345,14 +350,13 @@ Indeed, the Electric Field inside a spherical shell of charge is 0 because the c
 \subsection{Field of a Line Charge} 
 
 \vspace{20px} 
-
-\begin{center}
-\includegraphics[width = 50mm]{screenshot.png}
-\end{center} 
-
+\begin{figure}[!htb]
+  \centering
+  \includegraphics[width = 50mm]{screenshot.png}
+  \caption{line charge distribution}
+\end{figure}
 
 \vspace{10px}
-
 
 A long, straight, charged wire, if we neglect thickness, can be characterized
 by $\lambda$, the linear charge density. Using Gauss's Law, surround a segment
@@ -373,9 +377,11 @@ enclosed by the surface is just $\lambda L$, Gauss's Law gives us \\
 \subsection{Field of an Infinite Flat Sheet of Charge}
 
 \vspace{20px}
-\begin{center}
-\includegraphics[width = 50mm]{2.png}
-\end{center} 
+\begin{figure}[!hb]
+  \centering
+  \includegraphics[width = 50mm]{2.png}
+  \caption{infinite flat sheet of charge}
+\end{figure}
 \vspace{20px}
 
 Let the surface charge density be denoted by $\sigma$, and let there exist
@@ -488,7 +494,7 @@ mass $\approx 9.1 \times 10^{-31}$ kg) equal the electron's weight?
   &\frac{k(1.6\times 10^{-19})^2}{r^2} = 8.9 \times 10^{-30} \\
   r &= 5.08m 
 \end{align*}
-\newpage
+
 \subsubsection{1.4}
 
 At each corner of a square is a particle with charge $q$. Fixed at the center
@@ -573,9 +579,7 @@ $\frac{\sqrt{2}a}{2}$ away.
  
 
 Now we just need to add together all the $x$ components and set the result
-equal to zero to obtain $Q$. \\
-
-We end up obtaining: 
+equal to zero to obtain $Q$. We end up obtaining: 
 
 \[
   Q = q\left[\frac{1+\frac{\sqrt{2}}{4}}{\sqrt{2}}\right]
@@ -603,9 +607,11 @@ integral of $E$ between the two points is
 A line integral is essentially just summing up an infinite number of small
 vectors tangent to the line from $P_1$ to $P_2$ \\ 
 
-\begin{center}
-\includegraphics[width = 50mm]{ss8.png}
-\end{center} 
+\begin{figure}[!hb]
+  \centering
+  \includegraphics[width = 50mm]{ss8.png}
+  \caption{representing line integrals}
+\end{figure}
 
 Let us consider the field of a point charge $q$ and some paths running from
 a point $P_1$ to $P_2$ in that field. Let $r_1$ be the radius from $q$ to $P_1$
@@ -733,9 +739,11 @@ potential:\\
  charge alone. No vector addition is involved here, only the algebraic addition
  of scalar quantities.
 
-\begin{center}
-\includegraphics[width = 50mm]{ss9.png}
-\end{center} 
+\begin{figure}
+  \centering
+  \includegraphics[width = 50mm]{ss9.png}
+  \caption{two point charges}
+\end{figure}
 
 \[ \phi = k\sum_{i=1}^N \frac{q_i}{r} \] \\
 
@@ -770,9 +778,12 @@ $-\nabla \varphi$ to get back to the electric field $\vec{E}$. In this case,
 
 As a start, let us find the potential at some point $P_1$ on the axis of symmetry. 
 
-\begin{center}
-\includegraphics[width = 50mm]{ss10.png}
-\end{center} 
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 50mm]{ss10.png}
+  \caption{uniformly charged disk}
+\end{figure}
 
 All charge elements in a thin, ring-shaped segment of the disk lie at the same
 distance from $P_1$. If $s$ denotes the radius of such an annular segment and
@@ -807,9 +818,11 @@ Hence,
 To calculate the potential at $P_2$, a point on the very edge of the disk, we
 can consider first the thin wedge of length $R$ and angular width $d\theta$. 
 
-\begin{center}
-\includegraphics[width = 50mm]{ss11.png}
-\end{center} 
+\begin{figure}
+  \centering
+  \includegraphics[width = 50mm]{ss11.png}
+  \caption{edge of disk}
+\end{figure}
 
 An element of the wedge, the black patch at a distance $r$ from $P_2$ contains
 an amount of charge $\sigma \, d\theta dr$. Its contribution to the Potential
@@ -876,9 +889,12 @@ Now imagine dividing $V$ into two parts by a surface, $D$ that cuts through the
 ``balloon'' $S$. denote the two parts of $V$ by $V_1$ and $V_2$, treating them
 as distinct volumes, and compute the surface integral separately.
 
-\begin{center}
-\includegraphics[width = 50mm]{ss12.png}
-\end{center} 
+
+\begin{figure}
+  \centering
+  \includegraphics[width = 50mm]{ss12.png}
+  \caption{slicing $D$} 
+\end{figure}
 
 
 Therefore, 
