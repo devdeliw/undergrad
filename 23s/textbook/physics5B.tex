@@ -1,40 +1,41 @@
 \documentclass[svgnames]{article}
-\usepackage{tikz}  					% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{tikz}  					            % use "amsart" instead of "article" for AMSLaTeX format
 \usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
 \geometry{letterpaper} 
-                  						% ... or a4paper or a5paper or ... 
+                  						          % ... or a4paper or a5paper or ... 
 %\geometry{landscape}                		% Activate for rotated page geometry
-%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+%\usepackage[parfill]{parskip}    		  % Activate to begin paragraphs with an empty line rather than an indent
 \usepackage{graphicx}	
-\newtheorem{theorem}{Theorem}		% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+\newtheorem{theorem}{Theorem}		        % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 	
 %images
 
 \graphicspath{{img/}}	
 	
 	
-%math							% TeX will automatically convert eps --> pdf in pdflatex		
+%math							                      % TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{esint}
+\usepackage[most]{tcolorbox}
 
 %pgfplots & tikz
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.15}
 \usepackage{comment}
 \usetikzlibrary{arrows}
+
 %Figures
 \usepackage{float}
 \usepackage{caption}
 \usepackage{lipsum}
-
-
+\usepackage{/Users/devaldeliwala/freektikz}
 
 
 
 \title{Physics 5B}
 \author{deval deliwala}
-%\date{}					% Activate to display a given date or no date
+%\date{}					                      % Activate to display a given date or no date
 
 
 \begin{document}
@@ -146,7 +147,11 @@ proportional to the square of the distance between them
  
 It is customary to introduce a constant $\epsilon_0$ with which the same equation is written \\ 
 
-\[ \vec{F} = \frac{1}{4\pi \epsilon_0}\frac{q_1q_2}{r^2}\hat{r} \] \\
+\begin{tcolorbox}	
+
+\[ \vec{F} = \frac{1}{4\pi \epsilon_0}\frac{q_1q_2}{r^2}\hat{r} \]
+
+\end{tcolorbox}
 
 In addition, Coulomb's Law is \textit{additive} in its effect. \\
 
@@ -169,7 +174,7 @@ adding them to produce the force on any one of the particles is known as \textit
 \vspace{20px}
 
 Energy is a useful concept in electrostatics because electrical forces are
-\textit{conservative}, meaning they are path independant and everything is perfectly reversible. \\ 
+\textit{conservative}, meaning they are path independent and everything is perfectly reversible. \\ 
 
 Consider the work which must be done on a system to bring two charged particles
 very far apart from one another, to a distance $r_{12}$. \\
@@ -215,7 +220,11 @@ of the cube, with sides length $b$. Suppose each negative charge is an electron
 
 A simpler way of calculating potential energy is \\
 
+\begin{tcolorbox}
+
 \[ U = \frac{1}{2}\sum_{j=1}^N \sum_{k\neq j}^N \frac{q_jq_k}{r_{jk}} \]
+
+\end{tcolorbox}
 
 \subsection{The Electric Field} 
 
@@ -244,7 +253,11 @@ A volume distribution of charge is described by a scalar charge-density
 function $\rho$. If the source of an electric field is to be a continuous
 charge distribution rather than point charges, \\
 
-\[ \vec{E}(x,y,z) = \frac{1}{4\pi\epsilon_0} \iiint \frac{\rho(x',y',z')}{r^2} \hat{r} \, dx'dy'dz' \] \\
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black]
+
+\[ \vec{E}(x,y,z) = \frac{1}{4\pi\epsilon_0} \iiint \frac{\rho(x',y',z')}{r^2} \hat{r} \, dx'dy'dz' \]
+
+\end{tcolorbox}
 
 This integral gives the electric field at $(x,y,z)$ produced by charges at other points $(x',y',z')$
 
@@ -280,10 +293,10 @@ would be $E_1,E_2,...,E_N$, the flux $\Phi$ through some surface $S$ in the actu
 
 Therefore, every charge $q$ inside the surface contributes exactly $4\pi q$ to
 the surface integral and all charges outside contribute nothing. We have arrived at Gauss's Law \\ 
-
-\[ \textbf{Gauss's Law} \rightarrow  \oiint \vec{E} \cdot d\vec{a} = 4\pi
-\sum_i q_i = 4\pi \iiint \rho \, dv =  \frac{Q}{\epsilon_0} \] \\ 
-
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black]
+\[ \oiint \vec{E} \cdot d\vec{a} = 4\pi
+\sum_i q_i = 4\pi \iiint \rho \, dv =  \frac{Q}{\epsilon_0} \]  
+\end{tcolorbox}
 
 \textbf{Note*} \\
 
@@ -485,33 +498,43 @@ With Q set at that value, the system, in the absence of other forces, is in
 equilibrium. Is that equilibrium stable? 
 
 \begin{center}
-\definecolor{uuuuuu}{rgb}{0.26666666666666666,0.26666666666666666,0.26666666666666666}
-\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
-\definecolor{xdxdff}{rgb}{0.49019607843137253,0.49019607843137253,1}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
-\clip(-1.8912024702657917,-1.699087826739117) rectangle (6.216784961751652,4.557617645181432);
-\draw [line width=2pt] (0,3)-- (3,3);
-\draw [line width=2pt] (3,3)-- (3,0);
-\draw [line width=2pt] (3,0)-- (0,0);
-\draw [line width=2pt] (0,0)-- (0,3);
-\begin{scriptsize}
-\draw [fill=xdxdff] (0,3) circle (2.5pt);
-\draw[color=xdxdff] (0.06676353498919485,3.155036227955512) node {$q_{1}$};
-\draw [fill=ududff] (3,3) circle (2.5pt);
-\draw[color=ududff] (3.066467863552924,3.155036227955512) node {$q_{2}$};
-\draw[color=black] (1.522686974794185,2.973045797979889) node {$f$};
-\draw [fill=xdxdff] (3,0) circle (2.5pt);
-\draw[color=xdxdff] (3.066467863552924,0.1553318993917982) node {$q_{4}$};
-\draw[color=black] (2.92213062598605,1.5736021467880312) node {$g$};
-\draw [fill=uuuuuu] (0,0) circle (2pt);
-\draw[color=uuuuuu] (0.06676353498919485,0.14278083525554836) node {$q_{3}$};
-\draw[color=black] (1.522686974794185,0.17415849559617297) node {$h$};
-\draw[color=black] (0.12324332360231946,1.5736021467880312) node {$i$};
-\draw [fill=ududff] (1.5,1.5) circle (2.5pt);
-\draw[color=ududff] (1.5477891030666846,1.6363574674692805) node {$Q$};
-\end{scriptsize}
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Square [id:dp3628440829940418]
+\draw   (100,102) -- (150,102) -- (150,152) -- (100,152) -- cycle ;
+%Flowchart: Connector [id:dp962875167044265]
+\draw   (120.5,127) .. controls (120.5,124.41) and (122.51,122.31) .. (125,122.31) .. controls (127.49,122.31) and (129.5,124.41) .. (129.5,127) .. controls (129.5,129.59) and (127.49,131.69) .. (125,131.69) .. controls (122.51,131.69) and (120.5,129.59) .. (120.5,127) -- cycle ;
+%Flowchart: Connector [id:dp41904569448357454]
+\draw   (145.5,152) .. controls (145.5,149.58) and (147.51,147.63) .. (150,147.63) .. controls (152.49,147.63) and (154.5,149.58) .. (154.5,152) .. controls (154.5,154.42) and (152.49,156.38) .. (150,156.38) .. controls (147.51,156.38) and (145.5,154.42) .. (145.5,152) -- cycle ;
+%Flowchart: Connector [id:dp6842851433628856]
+\draw   (145.5,102) .. controls (145.5,99.58) and (147.51,97.63) .. (150,97.63) .. controls (152.49,97.63) and (154.5,99.58) .. (154.5,102) .. controls (154.5,104.42) and (152.49,106.38) .. (150,106.38) .. controls (147.51,106.38) and (145.5,104.42) .. (145.5,102) -- cycle ;
+%Flowchart: Connector [id:dp1466834634489791]
+\draw   (95.5,102) .. controls (95.5,99.58) and (97.51,97.63) .. (100,97.63) .. controls (102.49,97.63) and (104.5,99.58) .. (104.5,102) .. controls (104.5,104.42) and (102.49,106.38) .. (100,106.38) .. controls (97.51,106.38) and (95.5,104.42) .. (95.5,102) -- cycle ;
+%Flowchart: Connector [id:dp666708791392284]
+\draw   (95.5,152) .. controls (95.5,149.58) and (97.51,147.63) .. (100,147.63) .. controls (102.49,147.63) and (104.5,149.58) .. (104.5,152) .. controls (104.5,154.42) and (102.49,156.38) .. (100,156.38) .. controls (97.51,156.38) and (95.5,154.42) .. (95.5,152) -- cycle ;
+
+% Text Node
+\draw (127,130.4) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$Q$};
+% Text Node
+\draw (80,83.4) node [anchor=north west][inner sep=0.75pt]    {$q_{1}$};
+% Text Node
+\draw (159,85.4) node [anchor=north west][inner sep=0.75pt]    {$q_{2}$};
+% Text Node
+\draw (158,149.4) node [anchor=north west][inner sep=0.75pt]    {$q_{4}$};
+% Text Node
+\draw (79,149.4) node [anchor=north west][inner sep=0.75pt]    {$q_{3}$};
+
+
 \end{tikzpicture}
+
 \end{center}
+
+
 
 The resultant force on a charge $q_0$ from other charges is given by 
 
@@ -595,8 +618,9 @@ This equation holds for all paths between $P_1$ and $P_2$, the vector field
 $\vec{E}$ is \textit{path indepenent}. In the case that paths are all closed
 curves, \\
 
-
-\[ \int_C \vec{E} \cdot d\vec{s} = \vec{0} \] \\
+\begin{tcolorbox}
+\[ \oint_C \vec{E} \cdot d\vec{s} = \vec{0} \] 
+\end{tcolorbox}
 
 \subsection{Potential Difference and the Potential Function} \mbox{} \\
 
@@ -666,7 +690,9 @@ Thus, if we identify $\vec{E} = - \nabla \varphi$, both equations become
 identical. So the electric field is the negative of the gradient of the
 potential:\\
 
- \[ \vec{E} = - \nabla \varphi \] \\
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black]
+ \[ \vec{E} = - \nabla \varphi \] 
+\end{tcolorbox}
  
  The minus sign came in because the electric field points from a region of
  positive potential towards a region of negative potential, but the vector
@@ -677,7 +703,7 @@ potential:\\
  
  We already know the potential that goes with a single point charge, because we
  calculated the work required to bring one charge into the neighborhood of
- another before. The potential of any point, in the field of an insolated point
+ another before. The potential of any point, in the field of an insulated point
  charge $q$ is just $k\frac{q}{r}$, where $r$ is the distance from the point in
  question to the source $q$, and where we have assigned 0 potential to be
  infinitely far away.  \\
@@ -908,9 +934,10 @@ Therefore,  \\
 
 \[ \text{div} \vec{E} = 4 \pi k \rho = \frac{Q}{\epsilon_0} \] \\
 
-\textbf{Differential Form of Gauss' Theorem} 
-
-\[ \nabla \cdot \vec{E} = \frac{Q}{\epsilon_0} \] \\ 
+\textbf{Differential Form of Gauss' Theorem} \\
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black]
+\[ \nabla \cdot \vec{E} = \frac{Q}{\epsilon_0} \]  
+\end{tcolorbox}
 
 \subsection{The Laplacian} \mbox{} \\ 
 
@@ -1018,6 +1045,8 @@ has a circulation, or vorticity. Maxwell used the name \textit{rotation}\\
   \caption{Some Vector Relations Summarized}
 \end{figure}
 
+\newpage
+
 \section{Electric Fields Around Conductors}
 
 The electrical difference between a good conductor and a good insulator is as
@@ -1029,7 +1058,6 @@ atoms or molecules make up the structure of the material.
 
 \subsection{Conductors in the Electrostatic Field}
 
-\vspace{20px}
 We shall be interested in the \textit{stationary} state of charge and electric
 field that prevails after all redistributions of charge have taken place in the
 conductors. \\
@@ -1209,7 +1237,7 @@ The electric field is everywhere perpendicular to the plane. If we make the
 distance of $Q$ from the original problem agree with the distance $h$ in our
 original problem, the upper half of the field in the image meets all our
 requirements. The field is perpendicular to the plane of the conductor, and in
-the neighbourhood of $Q$ it approaches the field of a point charge. \\
+the neighborhood of $Q$ it approaches the field of a point charge. \\
 
 The boundary conditions here are not quite those that figured in our uniqueness
 theorem in the last section. The potential of the conductor is fixed, but we
@@ -1259,7 +1287,7 @@ strength $\frac{2Q}{R^2}$ normal to the plane of the disk.
 
 Since our disk is a conductor, on which charge can move, the charge density and
 the resulting field strength will be even \textit{less} than$ \frac{2Q}{R^2}$
-near the centre of the disk because of the tendency of the charge to spread out
+near the center of the disk because of the tendency of the charge to spread out
 toward the rim. In any case, the field of this distribution is smaller in order
 of magnitude by a factor $\frac{h^2}{R^2}$ than the field described by $E_z$.
 As long as $R>>h$ we were justified. The image below shows in separate plots
@@ -1321,6 +1349,14 @@ this factor the \textit{capacitance} of that conductor and denote it by $C$.
 Q = C\phi_0
 \] 
 
+For an isolated spherical conductor of radius $a$ we know that $\phi_0
+= \frac{Q}{a}$. Continuing to measure $Q$ in esu and $\phi_0$ in statvolts, we
+know that the capacitance of the sphere must be \\
+\begin{tcolorbox}
+\[
+C = \frac{Q}{\phi_0}
+\] 
+\end{tcolorbox}
 
 
 \end{document}
