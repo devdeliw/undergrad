@@ -167,4 +167,14 @@ Now, making "beg" instantly autocomplete to an entire environment skeleton is no
 
 Now you should have a fast and effective way to write and compile TeX using Vim, VimTeX, Skim, and UltiSnips!
 
-This note-taking setup was heavily inspired by Gilles Castel's [article](https://castel.dev/post/lecture-notes-1/). He provides many examples of useful snippets for mathematics note-taking and a way to include math figures seamlessly. 
+This note-taking setup was greatly inspired by Gilles Castel's [article](https://castel.dev/post/lecture-notes-1/). He provides many examples of useful snippets for mathematics note-taking and a way to include math figures seamlessly. 
+
+--------------------------------------------------------------------------------------------------------------------------
+
+## Undergrad Repository
+
+This repository will store all my undergraduate notes and research from studying at UC Berkeley. 
+
+The '22f-'26s directories store all my textbook and lecture notes from my first semester - '22fall (f) - to my last semester - '26spring (s). I'm currently in my second semester - ['23s](https://github.com/devdeliw/undergrad/tree/main/23s).
+
+The [research](https://github.com/devdeliw/undergrad/tree/main/research) directory stores all my code and pdf summaries from working in UC Berkeley's [Moving Universe Lab](https://jluastro.atlassian.net/wiki/spaces/MULab/overview).
