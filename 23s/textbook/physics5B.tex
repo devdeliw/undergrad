@@ -28,7 +28,6 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{lipsum}
-\usepackage{/Users/devaldeliwala/freektikz}
 
 
 
@@ -298,12 +297,13 @@ would be $E_1,E_2,...,E_N$, the flux $\Phi$ through some surface $S$ in the actu
 
 Therefore, every charge $q$ inside the surface contributes exactly $4\pi q$ to
 the surface integral and all charges outside contribute nothing. We have arrived at Gauss's Law \\ 
-\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black]
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Gauss's Law]
 \[ \oiint \vec{E} \cdot d\vec{a} = 4\pi
 \sum_i q_i = 4\pi \iiint \rho \, dv =  \frac{Q}{\epsilon_0} \]  
 \end{tcolorbox}
 
-\textbf{Note*} \\
+\textbf{Note*} 
 
 Coulombs Law tells us how to derive the electric field if the charges are
 given; with Gauss's Law we can determine how much charge is in any region if the field is known. 
@@ -1373,6 +1373,46 @@ know that the capacitance of the sphere must be \\
 C = \frac{Q}{\phi_0}
 \] 
 \end{tcolorbox}
+
+
+For an isolated conducting disk of radius $a$, where $Q = (2/\pi)a\phi_0$, the
+capacitance of such a conductor is $C = (2/\pi)a$. By far the most common case
+of interest is that of two conductors oppositely charged, with $Q$ and $-Q$,
+respectively. 
+
+\begin{figure}[hb!]
+  \centering
+    \includegraphics[width = 5cm]{3.png}
+    \caption{parallel plate capacitor}
+\end{figure}
+
+Here the capacitance is defined as the ratio of charge $Q$ to the potential
+difference between the two conductors. The object itself, comprising the two
+conductors, insulating material to hold the conductor apart, and perhaps
+electrical terminals or leads, is called a capacitor. The most simple example
+is the parallel plate capacitor. \\
+Two similar flat conducting plates are arranged parallel to one another,
+separated by a distance $s$ as in the figure above. Let the area of each plate
+be $A$ and suppose that there is a charge $Q$ on one plate and $-Q$ on the
+other. $\varphi_1$ and $\varphi_2$ are the values of the potential at each of
+the plates. The image below shows in cross section the field lines in this
+system. Away from the edge, the field is very nearly uniform in the region
+between the plates. When it is treated as uniform, its magnitude must be
+$(\varphi_1 - \varphi_2)/s$. The corresponding density of the surface charge on
+the inner surface of one of the plates is 
+
+\[
+  \sigma = \frac{E}{4\pi} = \frac{\varphi_1-\varphi_2}{4\pi s}
+\] 
+If we neglect the actual variation of $E$ and therefore $\sigma$ which occurs
+principally near the edge of the plates, we can write a simple expression for
+the total charge on one plate: 
+
+ \[
+Q = A\frac{\varphi_1-\varphi_2}{4\pi s}
+\] 
+
+
 
 
 \end{document}
