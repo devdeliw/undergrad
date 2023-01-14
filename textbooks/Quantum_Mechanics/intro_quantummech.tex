@@ -449,7 +449,7 @@ realistic ones. The sensible thing to speak about is the probability of
 a variable existing in some \textit{interval} - say, between 16 and 17 years
 old in the previous example. If the interval is sufficiently short, this
 probability is \textit{proportional to the length of the interval}.
-Technically, we're talking about \textit{infinitesimal} intervals. Thus
+Technically, we're talking about \textit{infinitesimal} intervals. 
 
 \vspace{5px} \[
   \{ \text{probability that an individual lies between $x$ and  $(x + dx)$ \}}
@@ -476,7 +476,6 @@ way:
   x \rangle ^2
 \end{align*}
 
-\vspace{5px}
 
 \subsubsection{Example 1.2}
 
@@ -515,16 +514,15 @@ Thus the probability \textit{density} is
 
 We can check this result, 
 
-\vspace{5px} \[
+\[
   \int_{0}^{h} \rho(x)\,dx = \frac{1}{2\sqrt{h}}(2x^{1/2}) \Big|_0^h = 1 
-\] \vspace{5px}
+\]
 
 The \textit{average} distance is 
-
-\vspace{5px} \[
+\[
   \langle x \rangle = \int_{0}^{h} x\frac{1}{2\sqrt{hx}} \,dx
   = \frac{1}{2\sqrt{h}} (\frac{2}{3}x^{3/2})\Big|_0^h = \frac{h}{3}, 
-\] \vspace{5px}
+\]
 
 which is somewhat less than $h/2$, as anticipated. The image below shows the
 graph of $\rho(x)$, notice that the probability density can be infinite, though
@@ -539,6 +537,64 @@ the probability itself must of course be finite, less than or equal to 1.
     \includegraphics[width = 7cm]{screenshot 18.png}
     \caption{the probability density: $\rho(x) = 1/(2\sqrt{hx})$}
 \end{figure}
+
+
+\subsubsection{Problem 1.1} For the distribution of ages in the example above: 
+
+\begin{tcolorbox}	
+  
+  (a) Compute $\langle j^2 \rangle$ and $\langle j \rangle^2$ \\
+  (b) Determine $\Delta j$ for each $j$ and compute the standard deviation\\
+  (c) Use your results in (a) and (b) to check if the standard deviation makes sense. 
+  
+\end{tcolorbox}	
+
+
+\begin{figure}[htb!]
+  \centering
+    \includegraphics[width = 17cm]{screenshot 19.png}
+    \caption{solutions for problem 1.1}
+\end{figure}
+
+
+\subsubsection{Problem 1.2} 
+
+\begin{tcolorbox}	
+  
+(a) Find the standard deviation of the distribution in Example 1.2\\
+(b) What is the probability that a photograph, selected at random, would show
+a distance $x$ more than one standard deviation away from the average?
+
+\end{tcolorbox}	
+
+\begin{figure}[htb!]
+  \centering
+    \includegraphics[width = 17cm]{screenshot 20.png}
+    \caption{solutions to problem 1.2}
+\end{figure}
+
+\subsubsection{Problem 1.3} Consider the \textbf{gaussian} distribution 
+
+\vspace{5px} \[
+  \rho(x) = Ae^{-\lambda (x-a)^2}, 
+\] \vspace{5px}
+
+where $A, a$ and  $\lambda$ are positive real constants. 
+
+\begin{tcolorbox}	
+  
+  (a) Use the fact that $\int \rho(x) \, dx = 1$ to determine  $A$ \\
+  (b) Find $\langle x \rangle, \langle x^2 \rangle$ and $\sigma$ \\
+  (c) Sketch $\rho(x)$
+
+\end{tcolorbox}	
+
+\begin{figure}[htb!]
+  \centering
+    \includegraphics[width = 14cm]{screenshot 21.png}
+    \caption{solution to problem 1.3}
+\end{figure}
+
 
 
 
