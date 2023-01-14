@@ -178,3 +178,5 @@ This repository will store all my undergraduate notes and research from studying
 The 22f-26s directories store all my textbook and lecture notes from my first semester - '22fall (f) - to my last semester - '26spring (s). I'm currently in my second semester - [23s](https://github.com/devdeliw/undergrad/tree/main/23s). I store both the TeX code and PDF output to all my notes. 
 
 The [research](https://github.com/devdeliw/undergrad/tree/main/research) directory stores all my code and pdf summaries from working in UC Berkeley's [Moving Universe Lab](https://jluastro.atlassian.net/wiki/spaces/MULab/overview).
+
+The [textbooks](github.com/devdeliw/undergrad/textbooks) directory are notes (TeX + PDF) from studying text outside my courses at Berkeley. 
