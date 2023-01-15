@@ -591,12 +591,124 @@ where $A, a$ and  $\lambda$ are positive real constants.
 
 \begin{figure}[H]
   \centering
-    \includegraphics[width = 14cm]{screenshot 21.png}
+    \includegraphics[width = 17cm]{screenshot 21.png}
     \caption{solution to problem 1.3}
 \end{figure}
+
+\section{Normalization}
+
+We now return to the statistical interpretation of the wave function, which
+says that $|\Psi(x,t)|^2$ is the probability density for finding the particle
+at point $x$ at time $t$. Therefore, i
+\vspace{5px}
+\begin{tcolorbox}	
+  \[
+  \int_{-\infty}^{\infty} |\Psi(x,t)|^2 \, dx = 1 
+  \]
+\end{tcolorbox}	
+\vspace{5px}
+
+However, $\Psi(x,t)$ must also be a solution to the Schrodinger equation, as
+that is how it is determined. A glance at the Schrodinger equation reveals that
+if $\Psi(x,t)$ is a solution, so too is $A\Psi(x,t)$, where A is any
+(complex)constant. This process of finding a constant $A$ such that $\Psi(x,t)$
+satisfies both the above integral and Schrodinger's Equation is known as
+\textbf{normalizing} the wave function. 
+\vspace{5px}
+For some solutions to the Schrodinger equation, the integral above is infinite,
+in that case there exists no $A$ that would make it 1. The same goes for the
+trivial solution $\Psi = 0$. Such \textbf{non-normalizable} solutions cannot
+represent particles, and are therefore rejected. Physically realizable states
+correspond to the \textbf{square-integrable} solutions to Schrodinger's
+Equation. 
+\vspace{5px}
+But wait!. Suppose I have normalized the wave function at time $t=0$. How do
+I know it will \textit{stay} normalized as time goes on, and $\Psi$ evolves?
+Fortunately Schrodinger's Equation has the remarkable property that it
+\textit{preserves} the normalization of a wave function. 
+\vspace{5px}
+
+This is important, so let us prove it. 
+
+
+\vspace{20px}
+\noindent\textbf{\textit{Proof}} 
+  \[
+  \frac{d}{dt} \int_{-\infty}^{\infty}  |\Psi(x,t)|^2 \, dx
+  = \int_{-\infty}^{\infty}  \frac{\partial}{\partial t} |\Psi(x,t)|^2 \, dx  
+  \] 
+ *Note that the integral is only a function of $t$, so a normal derivative
+ works. The integrand is a function of both $x,t$ so we use a partial
+ derivative. 
+ \vspace{5px}
+ By the product rule, 
+
+ \[
+ \frac{\partial}{\partial t} |\Psi|^2 = \frac{\partial}{\partial t}(\bar\Psi
+ \Psi) = \bar\Psi \frac{\partial \Psi}{\partial t} + \frac{\partial
+ \bar\Psi}{\partial t}\Psi
+ \vspace{5px}
+ \]
+ Now the Schrodinger equation says that 
+
+ \[
+ \frac{\partial \Psi}{\partial t} = \frac{i \hbar}{2m}\frac{\partial^2
+ \Psi}{\partial x^2} - \frac{i}{\hbar}V\Psi
+ \]
+ \vspace{5px}
+ and hence also (taking complex conjugate)
+
+ \[
+   \frac{\partial \bar\Psi}{\partial t} = \frac{i\hbar}{2m} \frac{\partial^2
+  \bar\Psi}{\partial x^2} - \frac{i}{\hbar}V\bar\Psi  
+ \]
+ \vspace{5px}
+ so 
+
+ \vspace{5px} \[
+ \frac{\partial }{\partial t} |\Psi|^2 = \frac{i\hbar}{2m}\left(\bar\Psi
+   \frac{\partial^2 \Psi}{\partial x^2} - \frac{\partial^2 \bar\Psi}{\partial
+   x^2} \Psi \right) = \frac{\partial }{\partial x}
+   \left[\frac{i\hbar}{2m}\left(\bar\Psi \frac{\partial \Psi}{\partial x}
+   - \frac{\partial \bar\Psi}{\partial x} \Psi \right)\right]
+ \] \vspace{5px}
+ 
+  \noindent The original integral $\frac{d}{dt} \int_{-\infty}^{\infty} |\Psi(x,t)|^2\,dx
+ $ can now be evaluated explicitly: 
+
+\vspace{5px} \[
+  \frac{d }{d t} \int_{-\infty}^{\infty}  |\Psi(x,t)|^2 \, dx
+  = \frac{i\hbar}{2m} \left(\bar\Psi \frac{\partial \Psi}{\partial x}
+  - \frac{\partial \bar\Psi}{\partial x} \Psi \right) \Big|_{-\infty}^{\infty} 
+\] \vspace{5px}
+
+
+\noindent But $\Psi(x,t)$ must go to zero as $x$ goes to $(\pm)$ infinity - otherwise the
+wave function wouldn't be normalizable in the first place. It follows that 
+
+\vspace{5px} \[
+\frac{d }{d t} \int_{-\infty}^{\infty}  |\Psi(x,t)|^2 dx = 0 
+\] \vspace{5px}
+
+\noindent and hence the integral is \textit{constant} (independent of time); if $\Psi$ is
+normalized at $t=0$, it \textit{stays} normalized for all future time. 
+  
+
+
+
+
+
+
 
 
 
 
 \end{document}  
+
+
+
+
+
+
+
 
