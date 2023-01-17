@@ -1,1 +1,115 @@
-%will take notes here in the future
+\documentclass[svgnames]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+%\geometry{landscape}                	% Activate for rotated page geometry
+
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+
+\usepackage{graphicx}				          % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+
+%maths							                  % TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{geometry}
+
+%pgfplots
+\usepackage{pgfplots}
+
+%images
+%\graphicspath{{ }}					          % Activate to set a image directory 
+
+%tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{comment}
+\usetikzlibrary{arrows}
+\usepackage[most]{tcolorbox}
+
+%Figures
+\usepackage{float}
+\usepackage{caption}
+\usepackage{lipsum}
+
+
+\title{Physics 89 - Introduction to Mathematical Physics}
+\author{deval deliwala}
+%\date{}							                % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+\tableofcontents 					           % Activate to display a table of contents
+\newpage
+
+\noindent \textbf{Jan 17} \hrule
+
+
+\section{Difference between Mathematics and Physics}
+\vspace{5px}
+
+\begin{tcolorbox}[title = Example 1 - Electrostatics]
+
+\textbf{Math Question}
+\[
+  x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \dots = ? 
+\]
+
+\noindent \textbf{Math Solution}
+\[
+x + \frac{x^2}{2} + \frac{x^3}{3} + \dots = -\log(1-x), \hspace{10px} for -1
+\leq x \leq 1
+\]
+
+So, 
+\[
+-1 + \frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \frac{1}{5} + \dots = -\log(2)
+\]
+
+\end{tcolorbox}
+\vspace{5px}
+\begin{tcolorbox}[title = Example 2 - Diffusion] 
+  
+ \[
+   f(x,y,z,t) = \text{density of diffusing material at time $t$}
+ \]
+ Let there exist a cube containing moles 
+
+ \[
+ \frac{\partial f}{\partial t} = D\left( \frac{\partial^2 f}{\partial x^2}
+ + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}\right)
+ \]
+ where $D$ is the \textit{diffusion coefficient}, and the diffusion equation
+ describes how $f$ evolves with time \\
+
+ \textbf{Math Question} \\
+
+ Solve 
+
+ \[
+ \frac{\partial f}{\partial t} = D \left( \frac{\partial^2 f}{\partial x^2}
+   + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial
+   z^2}\right)
+ \]
+ given initial condition 
+
+  \[
+    f(x,y,z,0) = \text{concentrated lump at the origin} 
+ \]
+ 
+ \textbf{Math Solution}
+ 
+\[
+  f(x,y,z,t) = \frac{N}{(4\pi D t)^(3/2)}e^{-\frac{x^2 + y^2 + z^2}{4Dt}}
+\] \vspace{5px}
+
+where $N$ is the number of moles released
+  
+
+\end{tcolorbox}	
+
+
+
+
+
+\end{document}  
+
