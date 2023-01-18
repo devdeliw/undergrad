@@ -1,0 +1,247 @@
+\documentclass[svgnames]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+%\geometry{landscape}                	% Activate for rotated page geometry
+
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+
+\usepackage{graphicx}				          % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+
+%maths							                  % TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{geometry}
+\usepackage{physics}
+
+%pgfplots
+\usepackage{pgfplots}
+
+%images
+%\graphicspath{{ }}					          % Activate to set a image directory 
+
+%tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{comment}
+\usetikzlibrary{arrows}
+\usepackage[most]{tcolorbox}
+
+%Figures
+\usepackage{float}
+\usepackage{caption}
+\usepackage{lipsum}
+
+
+
+
+\title{Physics 89}
+\author{deval deliwala}
+%\date{}							                % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+Adapted from \textit{Mathematical Methods in the Physical Sciences} by Mary L.
+Boas 3rd ed. 
+
+\tableofcontents 	                    % Activate to display a table of contents
+\newpage
+
+\section{Infinite Series, Power Series}
+\vspace{5px}
+\subsection{The Geometric Series}
+\vspace{5px}
+
+In a geometric progression we multiply each term by some fixed number to get
+the next term. 
+
+\begin{align*}
+  &2,4,8,16,32,\dots,\\
+  &1,\frac{2}{3}, \frac{4}{9}, \frac{8}{27}, \frac{16}{81}, \cdots, \\
+  a, ar, ar^2, ar^3, \cdots 
+\end{align*}
+\vspace{5px}
+
+Let us consider the expression 
+
+\[
+\frac{2}{3} + \frac{4}{9} + \frac{8}{27} + \cdots
+\]
+
+This expression is an example of an \textit{infinite series}, and we are asked
+to find its sum. Let us first find the sum of $n$ terms, the formula being 
+
+\vspace{5px}
+\begin{tcolorbox}
+\[
+S_n = \frac{a(1-r^n)}{1-r}
+\]
+\end{tcolorbox}
+\vspace{5px}
+Using this equation, where $a$ is the first term and $r$ is the multiplier, we find
+
+\vspace{5px} \[
+S_n = \frac{2}{3} + \frac{4}{9} + \cdots + \left(\frac{2}{3}\right)^n
+= \frac{\frac{2}{3}[1-\left(\frac{2}{3}\right)^n]}{1-\frac{2}{3}} = 2 \left[1
+  - \left(\frac{2}{3}\right)^n\right]
+\] \vspace{5px}
+
+As $n$ increases, $\frac{2}{3}^n$ decreases and approaches zero, thus the sum
+of the infinite series is 2. 
+\vspace{5px}
+Infinite Geometric Sequences are known as \textit{geometric series} and can be
+written in the form 
+
+\vspace{5px} \[
+  a + ar + ar^2 + \dots + ar^{n-1} + \dots
+\] \vspace{5px}
+
+The sum of the geometric series is thus 
+
+\vspace{5px} \[
+  S = \lim_{n\to\infty} S_n
+\] \vspace{5px}
+
+A geometric series only has a sum if $|r| < 1$, and in this case, the sum is
+also equal to
+
+\vspace{5px} 
+\begin{tcolorbox}
+  \[
+S = \frac{a}{1-r}
+\] 
+\end{tcolorbox}\vspace{5px}
+
+The series is then called \textit{convergent}.
+
+\subsection{Definitions and Notations}
+\vspace{5px}
+We can write series in shorthand form using summation: 
+
+\vspace{5px} \[
+\sum_{n=1}^{\infty} n^2 = 1^2 + 2^2 + 3^2 + \dots  
+\] \vspace{5px}
+
+\subsection{Convergent and Divergent Series}
+\vspace{5px}
+
+Convergent series have a finite sum, divergent series do not. You can not apply
+ordinary algebra to divergent series. 
+
+\vspace{5px} \[
+1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \dots \hspace{10px} \text{is
+divergent}
+\]
+\[
+  1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots \hspace{10px} \text{is
+    convergent}
+\] \vspace{5px}
+Given that $\lim_{n\to\infty} S_n = S$, we make the following definitions 
+
+\begin{tcolorbox}	
+  
+  a. If the partial sums $S_n$ of an infinite series tend to a limit $S$, the
+  series is called \textit{convergent}, otherwise it is \textit{divergent} \\
+  b. The limiting value $S$ is called the $sum$ \\
+  c. The difference $R_n = S - S_n$ is called the \textit{remainder}
+
+\end{tcolorbox}	
+
+\subsection{The Preliminary Test for Convergence}
+\vspace{5px}
+
+If the terms of an infinite series do \textit{not} tend to zero, the series
+diverges. If $\lim_{n\to\infty} a_n = 0$, we must test further. 
+
+\subsection{Convergence Tests for Series of Positive Terms; Absolute
+Convergence}
+\vspace{5px}
+
+Four useful tests exist for series whose terms are all positive. We could also
+use these tests on the \textit{absolute value} of negative series to determine
+whether a series is \textit{absolutely convergent}, which also means it
+converges as well, but with a different sum. 
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title = The
+  Comparison Test]
+  
+  This test has two parts (a) and (b). 
+
+  (a) Let 
+  \[
+  m_1 + m_2 + m_3 + m_4 + \dots 
+  \]
+  
+  be a series of positive terms which you know converges. Then the series you
+  are testing, namely 
+  \[
+  a_1 + a_2 + a_3 + a_4 + \dots
+  \]
+  
+  is absolutely convergent if $|a_n| \leq m_n$ (that is, if the absolute value
+  of each term of the $a$ series is no larger than the corresponding term of
+  the $m$ series). 
+  \vspace{5px}
+  (b) Let 
+  \[
+  d_1 + d_2 + d_3 + d_4 + \dots 
+  \]
+  
+  be a series of positive terms which you know diverges. Then the series 
+  \[
+  |a_1| + |a_2| + |a_3| + |a_4| + \dots
+  \]
+  diverges if $|a_n| \geq d_n$ for all $n$ from some point on.\\\\
+  \textbf{Example} \\
+  
+  Test $ \sum_{n=1}^{\infty} \frac{1}{n!} = 1 + \frac{1}{2} + \frac{1}{6}i
+  + \frac{1}{24} + \dots$ for convergence. 
+
+  \vspace{5px}
+
+  As a comparison series, choose the geometric series 
+
+  \[
+  \sum_{n=1}^{\infty} \frac{1}{2^n} = \frac{1}{2} + \frac{1}{4} + \frac{1}{8}
+  + \frac{1}{16} + \dots 
+  \]
+  
+  We know that $ \sum_{n=1}^{\infty} \frac{1}{2^n}$ converges because the ratio
+  is $\frac{1}{2} \leq 1$, and since every corresponding sequence in
+  $ \sum_{n=1}^{\infty} \frac{1}{n!}$ is less than $\frac{1}{2^n}$, we know
+  that the series $\frac{1}{n!}$ converges as well. 
+
+\end{tcolorbox}
+\vspace{5px}
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title = The
+  Integral Test]
+  
+  We can use this test when the terms of the series are positive \textit{and}
+  not increasing, when $a_{n+1} \leq a_n$. The test states that \\\\
+
+  If $0 \leq a_{n+1} \leq a_n$ for $n > N$, then $\sum^\infty a_n$ converges if
+  $\int^\infty a_n \, dn$ is finite and diverges if the integral is infinite.
+  (integral is evaluated only at the upper limit). \\\\
+
+  \textbf{Example} \\
+
+  Test for convergence the harmonic series $ \sum_{n=1}^{\infty} \frac{1}{n}$ 
+
+  \[
+  1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \dots
+  \]
+  
+  Using the integral test, we evaluate 
+
+  \[
+  \int^\infty \frac{1}{n} \, dn = \ln n \big|^\infty = \infty
+  \]
+  
+  Since the integral is infinite, the harmonic series diverges
+
+
+\end{tcolorbox}
+
+
+
+
+\end{document}
