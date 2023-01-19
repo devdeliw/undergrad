@@ -1,0 +1,295 @@
+\documentclass[svgnames]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+%\geometry{landscape}                	% Activate for rotated page geometry
+
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+
+\usepackage{graphicx}				          % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+
+%maths							                  % TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{geometry}
+
+%pgfplots
+\usepackage{pgfplots}
+
+%images
+%\graphicspath{{ }}					          % Activate to set a image directory 
+
+%tikz
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{comment}
+\usetikzlibrary{arrows}
+\usepackage[most]{tcolorbox}
+
+%Figures
+\usepackage{float}
+\usepackage{caption}
+\usepackage{lipsum}
+
+
+\title{Physics 89 - Introduction to Mathematical Physics}
+\author{deval deliwala}
+%\date{}							                % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+%\section{}
+%\subsection{}
+\tableofcontents 					           % Activate to display a table of contents
+\newpage
+
+\noindent \textbf{Jan 17} \hrule
+
+
+\section{Difference between Mathematics and Physics}
+\vspace{5px}
+
+\begin{tcolorbox}[title = Example 1 - Electrostatics]
+
+\textbf{Math Question}
+\[
+  x + \frac{x^2}{2} + \frac{x^3}{3} + \frac{x^4}{4} + \dots = ? 
+\]
+
+\noindent \textbf{Math Solution}
+\[
+x + \frac{x^2}{2} + \frac{x^3}{3} + \dots = -\log(1-x), \hspace{10px} for -1
+\leq x \leq 1
+\]
+
+So, 
+\[
+-1 + \frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \frac{1}{5} + \dots = -\log(2)
+\]
+
+\end{tcolorbox}
+\vspace{5px}
+\begin{tcolorbox}[title = Example 2 - Diffusion] 
+  
+ \[
+   f(x,y,z,t) = \text{density of diffusing material at time $t$}
+ \]
+ Let there exist a cube containing moles 
+
+ \[
+ \frac{\partial f}{\partial t} = D\left( \frac{\partial^2 f}{\partial x^2}
+ + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}\right)
+ \]
+ where $D$ is the \textit{diffusion coefficient}, and the diffusion equation
+ describes how $f$ evolves with time \\
+
+ \textbf{Math Question} \\
+
+ Solve 
+
+ \[
+ \frac{\partial f}{\partial t} = D \left( \frac{\partial^2 f}{\partial x^2}
+   + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial
+   z^2}\right)
+ \]
+ given initial condition 
+
+  \[
+    f(x,y,z,0) = \text{concentrated lump at the origin} 
+ \]
+ 
+ \textbf{Math Solution}
+ 
+\[
+  f(x,y,z,t) = \frac{N}{(4\pi D t)^(3/2)}e^{-\frac{x^2 + y^2 + z^2}{4Dt}}
+\] \vspace{5px}
+
+where $N$ is the number of moles released
+  
+
+\end{tcolorbox}	
+
+\newpage
+\noindent \textbf{Jan 19} \hrule
+\section{Taylor Series} 
+
+\begin{itemize}
+  \item Techniques for obtaining series
+  \item Estimate error, converge?     
+\end{itemize}
+%1
+
+\vspace{5px} \[
+  f(x) \approx f(0) + f'(0)x + \dots + \frac{1}{n!}f^{n}(0)x^n
+\] \vspace{5px} 
+\[
+  f(x) \approx f(a) + f'(a)(x-a) + \frac{1}{2}f''(a)(x-a)^2 + ... = \sum_{k=0}^{\infty} \frac{1}{k!}f^{k} (a)
+  (x-a)^k
+\]
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Question]
+  
+  How good is this approximation? 
+
+\end{tcolorbox}
+
+\textit{ Big $O$ notation}
+\vspace{5px} \[
+\sum_{k=9}^{n} \frac{1}{k!}f^k(0) x^k + O(x^{n+1})
+\] \vspace{5px}
+
+\textit{ \textbf{Formally,}}
+
+\vspace{5px} \[
+  F(x) = o(x^{n+1}) \hspace{10px} \text{as } x \rightarrow 0
+\] \vspace{5px}
+\[
+  |F| \leq C|x|^{n+1} \hspace{10px} \text{for some unexpected constant c}
+\] \vspace{5px}
+\[
+  \lim_{x\to 0} \frac{F}{|x|^{n+1}} = 0
+\] \vspace{5px}
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Example]
+  \begin{gather*}
+  e \approx 1.9 GeV \approx 3700 mc^2 \\\\
+  \text{Special Relativity} \\
+  E_k = m_0 c^2 - mc^2 = \frac{mc^2}{ \sqrt{ 1 - \frac{v^2}{c^2}}} - mc^2 \\
+  \approx 0 + \frac{1}{2}mv^2 + \frac{3}{8}m\frac{v^4}{c^2} + \frac{5}{16}m
+  \frac{v^8}{c^4} \\
+  f(v) = \frac{1}{2}mv^2  + \frac{3}{8}m\frac{v^4}{c^2} + \dots 
+  \end{gather*}
+\end{tcolorbox}
+
+\vspace{5px} \[
+\frac{1}{ \sqrt{1-x}} \rightarrow \frac{mc^2}{ \sqrt{1 - \frac{v^2}{c^2}}}
+\] \vspace{5px}
+\[
+  (1+x)^P, \hspace{10px} \text{then set $p = \frac{1}{2}$}
+\]
+
+\begin{align*}
+  f(x) &= (1+x)^n  \\ f'(x) &= p(1+x)^{p-1}  \\ f^k (x)  &= p(p-1) \dots
+  (p-k+1)(1+x)^{p-k} \rightarrow f^k (0) \\ &= p \dots (p-k+1) 
+\end{align*}
+
+\begin{align*}
+  (1+x)^n \approx 1 + px + \frac{p(p-1)}{2!}x^2 + ... + \frac{p!}{k!(p-k)!}x^k
+  = \begin{pmatrix} p \\ k \end{pmatrix}x^k
+\end{align*}
+
+\vspace{5px} \[
+  \sum_{k=0}^{n} \begin{pmatrix} p \\ k \end{pmatrix} x^k \hspace{10px}
+  \text{generalized binomial coefficient} 
+\] \vspace{5px}
+\vspace{5px} \[
+  (1+x)^P = \sum_{k=0}^{n} \begin{pmatrix} p \\ k \end{pmatrix} x^k + O(x^{n+1}
+\] \vspace{5px}
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Question]
+  
+  Given $\frac{1}{ \sqrt{1+x}}$ taylor series, how good is this approximation
+  if $x=0.1$? 
+
+\end{tcolorbox}
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Solution]
+\vspace{5px} \[
+  \text{Actual Answer} \rightarrow  \frac{1}{\sqrt{1.1}} = 0.9534626
+\] \vspace{5px}
+\[
+  \text{Taylor Polynomials $x, x^2$} \rightarrow 1 - \frac{0.1}{2} = 0.95
+  \hspace{10px} / \hspace{10px} 1 - \frac{0.5}{2} + \frac{3(0.5)^2}{8}
+  = 0.95375 \hspace{10px} \text{good approx}
+\] \end{tcolorbox}
+\vspace{5px}
+\textit{ \textbf{More Taylor Series}}
+
+\begin{align*}
+  &\sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \frac{x^7}{7!} + \dots \\ 
+  &\cos x = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} - \frac{x^6}{6!} + \dots \\ 
+  &e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \dots \\\\
+  &\cosh x = \frac{e^x + e^{-x}}{2} = 1 + \frac{x^2}{2!} + \frac{x^4}{4!}
+  + \frac{x^6}{6!} + \dots \\
+  &\sinh x = \frac{e^x - e^x}{2} = x - \frac{x^3}{3!} + \frac{x^5}{5!} + \dots \\ 
+  %&J_o (2x) = \sum_{k=0}^{\infty} \frac{x^{2k}}{(k!)^2}(-1)^k
+  %= 1 - \frac{x^2}{1!^2 + \frac{x^4}{2!^2} - \frac{x^6}{3!^2} + \dots = \text{ Bessel Function}
+ \end{align*}
+
+
+\subsection{Testing for Convergence}
+
+If $ \sum_{0}^{\infty} a_n x^n \leq \infty $ converges, 
+
+\vspace{5px} \[
+\sum_{0}^{\infty} a_n (\lambda X)^n \leq \infty \hspace{10px}  \hspace{10px}
+|\lambda| \leq 1
+\] \vspace{5px}
+
+Taylor Series have interval of convergence of the form 
+
+\vspace{5px} \[
+  [-L, L] \hspace{10px} (-L, L) \hspace{10px} [-L, L) \hspace{10px} (-L, L]
+\] \vspace{5px}
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Truncated Taylor Series Approximation]
+  
+ \vspace{5px} \[
+ R_0(x) = f(x) - f(0) = f'(c)x
+ \] \vspace{5px} 
+
+\end{tcolorbox}
+
+%4
+%remainder visualized
+
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Remainder Theorem]
+ \[ 
+  R_n(x) = f^{n+1} (c) \frac{x^{n+1}}{(n+1)!} \hspace{10px} \text{for some $0
+  \leq c \leq x$}
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}	
+  
+  \begin{align*}
+    x &= \frac{\pi}{2} \\ 
+    R &= \sin \frac{\pi}{2} - (x - \frac{x^3}{6} + \frac{x^5}{120}
+    - \frac{x^7}{5040} + \frac{x^9}{362880..} + 0 ) \\
+      &= f^{10}(c)\frac{x^10}{10!} \hspace{10px} 0 \leq c \leq \frac{\pi}{2}
+      \\\\
+    |f^{11} (c) | &= | -\cos c| < 1 \\
+    |R_{10}| &\leq \frac{1}{11!} \left(\frac{\pi}{2}\right)^{11} \approx 3.6
+    \times 10^{-6}
+  \end{align*}
+
+\end{tcolorbox}	
+
+\vspace{5px} \[
+f(x) = a_0 + a_1x + \dots 
+\] \vspace{5px}
+\[
+g(x) = b_0 + b_1x + \dots
+\]
+
+\[
+\frac{f(x)}{g(x)} = (c_0 + c_1x +c_2x^2 + \dots)
+\]
+
+\[
+a_0 + a_1x + \dots = (b_0 + b_1x + \dots)(c_0 + c_1x + \dots) 
+\]
+\[
+a_0 = b_0c_0
+\]
+
+
+
+
+
+
+\end{document}  
+
