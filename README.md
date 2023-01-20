@@ -180,3 +180,5 @@ The 22f-26s directories store all my textbook and lecture notes from my first se
 The [research](https://github.com/devdeliw/undergrad/tree/main/research) directory stores all my code and pdf summaries from working in UC Berkeley's [Moving Universe Lab](https://jluastro.atlassian.net/wiki/spaces/MULab/overview).
 
 The [textbook](https://github.com/devdeliw/undergrad/tree/main/textbooks) directory are notes (TeX + PDF) from studying subjects outside my classes / in preparation for future classes. 
+
+Within each semester's directory beginning from [23s](https://github.com/devdeliw/undergrad/tree/main/23s) , I have a section for [lecture](https://github.com/devdeliw/undergrad/tree/main/23s/lecture) notes, the class [textbook](https://github.com/devdeliw/undergrad/tree/main/23s/textbook) notes, and [work](https://github.com/devdeliw/undergrad/tree/main/23s/work) for the class, including homework.  
