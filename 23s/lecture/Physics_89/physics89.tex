@@ -4,6 +4,8 @@
 %\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
 
 \usepackage{graphicx}				          % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
 
 %maths							                  % TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
@@ -291,6 +293,267 @@ a_0 + a_1x + \dots &= (b_0 + b_1x + \dots)(c_0 + c_1x + \dots)  \\\\
 a_0 &= b_0c_0
 \end{align*}
 
+\newpage
+\noindent \textbf{Jan 24} \hrule
+\vspace{10px} 
+\section{Complex Numbers}
+
+\begin{itemize}
+  \item Definition
+  \item Functions: $\log z, \sqrt{z}, \sin z,$, etc.
+  \item Applications: AC Circuits, Hydrodynamics
+  \item Math Applications: $\int_{\infty}^{\infty}$
+\end{itemize}
+
+\subsection{Taylor Series}
+
+\[
+f(x) = \frac{1}{1+x^2} = \frac{1}{1-(-x^2)} = 1 - x^2 + x^4 - x^6 + - \dots
+= \sum_{n=0}^{\infty} (-1)^n x^{2n}
+\]
+
+The interval of convergence for the taylor series of $\frac{1}{1+x^2}$ is from
+$(-1,1)$, which is not readily apparent since 
+
+ \[
+@x \pm 1, f(x) = \frac{1}{2}
+\]
+
+%1
+%taylor series of $e^{1/x^2}$
+
+\subsection{Complex Numbers}
+
+Introduced by \textit{Cardano} in the 1500s with the intent of solving cubic
+equations.
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Quadratic Equations]
+  
+  \[
+  0 = x^2 + bx + c \hspace{10px} x = -b \pm \frac{ \sqrt{b^2 - 4ac}}{2a}
+  \]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Cubic Equations]
+  \[
+  0 = x^3 + ax + b \hspace{10px} \left(\frac{-b}{2} + \sqrt{\frac{b^2}{4}
+  - \frac{a^3}{27}}\right)^{\frac{1}{3}}
+  \]
+
+  \[
+    x^3 - x = 0 \rightarrow x = \frac{1}{ \sqrt{3}}\left[\sqrt{-1}^{1/3}
+    + (-\sqrt{-1})^{1/3} \right]
+  \]
+  \begin{itemize}
+    \item consistency
+    \item final answer is \textbf{real}
+    \item simplifies computations
+  \end{itemize}  
+  
+\end{tcolorbox}
+
+\paragraph{Rules of Complex Numbers}
+
+\[
+z = a + bi
+\]
+
+\[
+ i^2 = -1
+\]
+
+\[
+  (a + bi)(c + di) = (ac - bd) + (ad + bc)i
+\]
+\vspace{5px}
+\begin{tcolorbox}[title = Example]
+
+  \begin{align*}
+    &(1+i)^2 = 2i \\
+    &i^4 = 1
+  \end{align*}
+
+\end{tcolorbox}
+\vspace{5px}
+
+\begin{align*}
+  \frac{1}{a+bi} &= \frac{(a+bi)}{(a-bi)(a+bi)} = \frac{(a-bi)}{a^2 + b^2} \\
+                 &= \left(\frac{a}{a^2+b^2}\right) - \left(\frac{b}{a^2 + b^3}\right)i
+\end{align*}
+
+\subsection{Applications}
+
+\paragraph{Hydrodynamics}
+
+%2
+%2D Diagram of Sphere from above 
+
+\[
+\vec{v}(x,y) = v_x \hat{i} + v_y \hat{j}
+\]
+
+\begin{tcolorbox}[title = Problem]	
+  
+  \[
+  V_x, V_y = ? 
+  \]
+  
+\end{tcolorbox}	
+
+\begin{tcolorbox}[title = Model]
+
+  1. Incompressible
+  
+   \[
+     (a). \hspace{10px} 0 = \nabla \cdot \vec{v} = \frac{\partial v_x}{\partial x} + \frac{\partial
+    v_y}{\partial y} 
+  \] 
+  2. Irrotational
+
+  \[
+    (b.) \hspace{10px} 0 = (\nabla \times \vec{v})_z = \frac{\partial v_x}{\partial x}
+    - \frac{\partial v_x}{\partial y} 
+  \]
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Solving (a) and (b) ]
+  
+  Set of \textbf{coupled} partial differential equations (PDEs) 
+
+  \begin{itemize}
+    \item What are the Boundary Conditions? 
+    \begin{itemize}
+      \item an additional set of equations at the edges
+    \end{itemize}
+  \end{itemize}
+
+  \begin{align*}
+    &(1.) \hspace{10px} r = \sqrt{x^2 + y^2} \rightarrow \infty \hspace{10px}
+    \vec{v} \rightarrow v_0 \hat{i} \\
+    &(2.) \hspace{10px} \vec{v} \cdot \hat{r} = 0
+  \end{align*}
+  
+ \textbf{Fact}: Complex Numbers \\
+ Define $z = x + iy$, z is \textbf{not} the third coordinate\\
+ Define $U = v_x \hat{i} - iv_y$ and $U = f(z)$ $\rightarrow$ Equations (a.)
+ and
+ (b.) are automatically satisfied. 
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Solution]
+  \[
+  U = v_0\left(1-\frac{R^2}{z^2}\right)
+  \]
+
+  \[
+  \frac{1}{z} = \frac{1}{x+iy} = \frac{x-iy}{x^2 + y^2}
+  \]
+  \[
+  \frac{1}{z^2} = \frac{x^2 - y^2 - 2ixy}{(x^2 + y^2)^2}
+  \]
+  \[
+  v_x = v_0 - \frac{v_0R^2(x^2 - y^2)}{(x^2 + y^2)^2}
+  \]
+  
+\end{tcolorbox}
+
+\paragraph{The Complex Plane}
+
+%3
+
+\paragraph{Euler's Identity}
+
+\[
+  \cos \theta + i \sin \theta = e^{i\theta}
+\]
+\begin{align*}
+  e^{x} &= 1 + \frac{x}{1} + \frac{x^2}{2} + \frac{x^3}{3!} + ...
+  \sum_{n=0}^{\infty} \frac{x^n}{n!} \\
+  e^{iy} &= 1 + \frac{iy}{1} - \frac{y^2}{2!} - \frac{iy^3}{3!} + \frac{y^4}{4!}
+  + \dots \\
+         &= \left(1 - \frac{y^2}{2!} + \frac{y^4}{4!} + \dots \right) + \left(\frac{y}{1}
+- \frac{y^3}{3!} + \dots \right)i = \cos y + i \sin y 
+\end{align*}
+
+\begin{tcolorbox}[title = Euler's Identities]
+  \begin{align*}
+    e^{i\pi} &= -1 \\
+    1 = e^{2\pi i} &= e^{2\pi n i} \hspace{10px} n = 0, \pm 1, \pm 2, \dots
+\end{align*}
+
+\end{tcolorbox}
+
+\[
+\log z = ?
+\]
+\begin{align*}
+  z &= re^{i\theta} \\
+  \log z &= \log r + i(\theta + 2 \pi n)
+\end{align*}
+
+\[
+\sqrt{z}
+\]
+\begin{align*}
+  \sqrt{re^{iz}} &= \sqrt{r} e^{i\theta / 2} \\
+                 &= \sqrt{r}e^{\frac{i(\theta + 2\pi)}{2}}\\
+                 &= -\sqrt{r} e^{i\theta / 2}
+\end{align*}
+
+\paragraph{Trigonometric Functions}
+
+\[
+  \cos z = \frac{e^{iz} + e^{-iz}}{2}
+\]
+\[
+  \sin z = \frac{e^{iz} - e^{-iz}}{2i}
+\]
+\[
+  cos(iy) = \frac{e^{-y} + e^{y}}{2} = \cosh y
+\]
+\[
+  sin(iy) = i\frac{e^y - e^{-y}}{2} = i\sinh y
+\]
+
+\subsection{Hyperbolic Functions}
+
+\[
+\tanh = \frac{\sinh y}{\cosh y}
+\]
+
+Everything is \textbf{Real} from now on.
+
+\paragraph{Identities} 
+
+\begin{align*}
+  \sinh (\alpha + \beta) &= \sinh \alpha \cosh \beta + \cosh \alpha + \sinh
+  \beta \\
+  \cosh (\alpha + \beta) &= \cosh \alpha \cosh \beta + \sinh \alpha + \sinh
+  \beta \\
+  \tanh (\alpha + \beta) &= \frac{\tanh \alpha + \tanh \beta}{1 + \tanh \alpha
+  \tanh \beta}
+\end{align*}
+
+\paragraph{Applications to Special Relativity}
+
+\textbf{Relativistic Addition to Velocities}
+
+%4 
+%A train moving, with a car moving inside of it, what would an observer
+%calculate for the speed of the interior car? 
+\[
+ W = \frac{u + v}{1 + \frac{uv}{c^2}} = c \frac{\tanh \alpha - \tanh\beta}{1
+ + \tanh \alpha + \tanh \beta} = c\tanh(\alpha + \beta) 
+\]
+%5
+%Rapidity - Using hyperbolic tanget establishes the bounds of velocity as c and
+%-c
 
 
 
