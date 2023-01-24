@@ -4,7 +4,8 @@
 %\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
 
 \usepackage{graphicx}				          % Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
 %maths							                  % TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -308,6 +309,13 @@ E(r) \cdot 4\pi r^2 &= \frac{Q}{\epsilon_0}\\
 
 %5
 %diagram of coulomb's law
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = \linewidth]{screenshot 32.png}
+    \caption{Diagram of Coulomb's Law}
+\end{figure}
+
+
 
 \begin{tcolorbox}[title = Coulomb's Law]
 \[
@@ -322,10 +330,16 @@ the charge, and directed along the line between the charges. Attractive for
 opposite signs of charge, and vice versa. 
 
 %6
-%comparison between $F_g$ and $F_c$ 
+%comparison between $F_g$ and $F_c$ i
 
-\textit{ \textbf{Summary}} 
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 8cm]{screenshot 33.png}
+    \caption{Comparison between $F_g$ and $F_c$}
+\end{figure} 
 
+\newpage
+\textit{ \textbf{Jan 19 Summary}} 
 \vspace{5px} \[
   \iiint_V \nabla \cdot \vec{E} (\vec{r} ) \, dxdydz = \oint_S \vec{E} \cdot
   d\vec{a}
@@ -334,14 +348,124 @@ opposite signs of charge, and vice versa.
   \Phi = \frac{Q}{\epsilon_0} \rightarrow \vec{E}_{\text{point charge}}
   = \frac{Q}{4\pi r^2 \epsilon_0}
 \] \vspace{5px}
+\newpage
+\noindent \textbf{Jan 24} \hrule
+\vspace{10px} 
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Calculating $\vec{E}$ for arbitrary $\rho(\vec{r)}$]
+  
+  Superposition: $\nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0}$, works
+  because Maxwell's Equation are linear.
+
+  \begin{align*}
+    &\nabla \cdot \vec{E_1} = \frac{\rho_1}{\varepsilon_0} \\
+    &\nabla \cdot \vec{E_2} = \frac{\rho_2}{\varepsilon_0} \\\\
+    &\nabla \cdot (\vec{E_1} + \vec{E_2}) = \frac{\rho_1 + \rho_2}{\varepsilon_0}
+  \end{align*}
+
+  Proved $\nabla \cdot \vec{E_T} = \frac{\rho_T}{\varepsilon_0}$
+\end{tcolorbox}
+
+%1
+%volumes of charge
+
+%2
+%system of charges, notation of vectors
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = System of point charges]
+
+Therefore the field at $P$ is
+
+\[
+\vec{E_1}(\vec{r}) = \frac{q_1}{4\pi\varepsilon_0}\frac{1}{|\vec{r}
+- \vec{r_1}|^2} \cdot \frac{(\vec{r} - \vec{r_1})}{|\vec{r}- \vec{r_1}|}
+= \frac{q_1}{4\pi\varepsilon} \frac{(\vec{r}-\vec{r_1})}{|\vec{r}  - \vec{r_1}
+|^3}
+\]
+Superposition: 
+
+\[
+\vec{E}(\vec{r} ) = \sum_i \frac{q_i}{4\pi\varepsilon_0} \frac{(\vec{r}
+- \vec{r_1} )}{|\vec{r} - \vec{r_1} |^3}
+\]
+\end{tcolorbox}
+
+%3
+%volume charge distribution, $dq = \rho(r) d^3 v$
+
+\begin{tcolorbox}	
+  
+  \[
+  \vec{E}(\vec{r}) = \frac{1}{4\pi\varepsilon_0} \int d^3r'
+  \frac{\rho(\vec{r}')(\vec{r} - \vec{r}' }{|\vec{r} - \vec{r}'|^3}
+  \]
+  \[
+    \nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0}
+  \]
+
+\end{tcolorbox}	
 
 
+\subsection{Gauss's Law + Symmetry} 
+
+%4
+%different Gauss' law symmetries, symmetry of sphere of charge
 
 
+\paragraph{Symmetry of cylinder of charge}
+
+%5
+%symmetry of cylinder - field has to be radial
 
 
+\paragraph{Symmetry of plane of charge}
+
+%6
+%symmetry of plane - mirror symmetry
 
 
+\paragraph{Using Gauss's Law symmetry}
+
+\textbf{Problem. Uniform Sphere of Charge}  
+  
+\begin{align*}
+  \text{Gauss's Law} \\\\
+  &\oint_S = \vec{E} \cdot d\vec{a} = \frac{Q}{\varepsilon_0}\\\\
+  \text{Outside Surface}\\
+  &E(r) \cdot 4\pi r^2 = \frac{\rho_0 \frac{4\pi
+  r^3}{3}}{\varepsilon_0 } \\
+  &E(r) = \frac{\rho_0 R^3}{3\varepsilon_0 r^2} = \frac{Q}{4\pi r^2
+  \varepsilon_0} \\\\
+  \text{Inside Surface} \\
+  &E(r) \cdot 4\pi r^2 = \frac{Q}{\varepsilon_0} \cdot \left(\frac{r}{R}\right)^3
+\end{align*}
+
+\begin{tcolorbox}	
+    Outside: 
+    \[E(r) = \frac{Q}{4\pi r^2 \varepsilon} \]
+  Inside: 
+  \[E(r) = \frac{Q}{4\pi \varepsilon} \frac{r}{R^3} \]
+\end{tcolorbox}	
+
+
+%7
+%graph of $E(r) v. $r$ for a spherical charge distribution
+
+\paragraph{Lower Dimensional Charge Distributions}
+
+%8
+%1 and 2 dimensional charge distributions - $\sigma$ and $\lambda$
+
+\paragraph{Applying Gauss's Law to a Plane of Charge}
+
+%9
+%gaussian surface of a plane of charge
+
+\begin{align*}
+  2E(r)A &= \frac{\sigma A}{\varepsilon_0} \\
+  E &= \frac{\sigma}{\varepsilon_0} 
+\end{align*}
 
 \end{document}  
 
