@@ -474,7 +474,7 @@ Superposition:
 
 \begin{figure}[H]
   \centering
-    \includegraphics[width = 10cm]{screenshot 48.png}
+    \includegraphics[width = 8cm]{screenshot 48.png}
     \caption{symmetry of a plane -- mirror symmetry}
 \end{figure}
 
@@ -546,7 +546,7 @@ Superposition:
 
 \begin{figure}[H]
   \centering
-    \includegraphics[width = 8cm]{screenshot 52.png}
+    \includegraphics[width = 10cm]{screenshot 52.png}
     \caption{gaussian surface of a plane of charge}
 \end{figure}
 
@@ -556,6 +556,173 @@ Superposition:
   2E(r)A &= \frac{\sigma A}{\varepsilon_0} \\
   E &= \frac{\sigma}{\varepsilon_0} 
 \end{align*}
+
+\newpage
+\noindent \textbf{Jan 26} \hrule
+\vspace{10px} 
+\subsection{Visualizing the Electric Field}
+%1
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 11cm]{screenshot 66.png}
+    \caption{visualizing electric field lines}
+\end{figure}
+
+
+
+%2
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 10cm]{screenshot 67.png}
+    \caption{area density of field lines}
+\end{figure}
+
+
+
+\subsection{Energy, Work, and Electrostatic Potential}
+
+\paragraph{Work-Energy Theorem} 
+
+Consider a charged particle, moving in a force field $\vec{F}(r)$
+%3
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 6cm]{screenshot 68.png}
+    \caption{trajectory of $\vec{r}(t)$ }
+\end{figure}
+
+
+
+%trajectory of the charged particle, with a small $d\vec{r} $
+\begin{align*}
+  \vec{F}(\vec{r}) &= m \frac{d \vec{v}}{d t} \\  
+  \vec{F}(\vec{r}) \cdot d\vec{r} &= m \frac{d \vec{v}}{d t} \cdot d\vec{r}
+  \hspace{20px} \frac{d \vec{r} }{d t} = \vec{v} \\ 
+                   &= m \frac{d \vec{v}}{d  t} \cdot \vec{v}dt = m d\vec{v} \cdot \vec{v} 
+\end{align*}
+
+\begin{align*}
+  d(\vec{v} \cdot \vec{v}) &\rightarrow \text{Chain rule} \rightarrow \vec{v}
+  \cdot d\vec{v} + d\vec{v} \cdot \vec{v} = 2 d\vec{v} \vec{v} \\\\
+  d\vec{v} \cdot \vec{v} &= \frac{1}{2}dv^2 \\
+  \vec{F}\cdot d\vec{r} &= \frac{m}{2} dv^2 
+\end{align*}
+
+\vspace{5px} \[
+  \int_{r_a}^{r_b} \vec{F}\cdot d\vec{r} = \frac{m}{2}\int_{r_a}^{r_b} d(v)
+  = \frac{m}{2}\left[v^2(r_b) - v^2(r_a) \right]
+\] \vspace{5px}
+
+Therefore, $\int_{\vec{r_a}}^{\vec{r_b}} \vec{F}(\vec{r}) \cdot d\vec{r}
+= $ Work done by the force. 
+\vspace{5px}
+\begin{tcolorbox}
+\[
+  \int_{\vec{r_a}}^{\vec{r_b}} \vec{F}(\vec{r)} \cdot d\vec{r} = \Delta KE 
+\]
+\end{tcolorbox}
+%4
+%conservative force fields
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 9cm]{screenshot 69.png}
+    \caption{conservative force fields}
+\end{figure}
+
+
+
+%5
+%deriving conservative force field from Lorentz's Law
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 12cm]{screenshot 70.png}
+    \caption{deriving conservative force field from Lorentz's Law}
+\end{figure}
+
+
+
+%6
+%intuition for conservativeness
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 10cm]{screenshot 71.png}
+    \caption{intuition for conservative news}
+\end{figure}
+
+\textbf{Revision}
+
+\begin{align*}
+  W_{ab} = q\int_{\vec{r_a}}^{\vec{r_b}} \vec{E}(\vec{r}) \cdot d\vec{r}
+  = q\int_{P_1}^{P_2} \vec{E} \cdot d\vec{r}  
+\end{align*}
+
+\[
+  W_{ab}^{ext} = \text{work done to move a particle on a trajectory in the
+  presence of a force field}
+\]
+
+\vspace{5px} \[
+  W_{ab}^{ext} = -q\int_{P_1}^{P_2} \vec{E}(\vec{r}) \cdot d\vec{r} 
+\] \vspace{5px}
+\subsection{Electric Potential} 
+
+Define $\varphi(r_a, r_b)$
+
+\vspace{5px} \[
+  \varphi(\vec{r_a}, \vec{r_b}) = -\int_{r_a}^{r_b} \vec{E}(\vec{r}) \cdot
+  d\vec{r} 
+\] \vspace{5px}
+\[
+  \varphi = \int_{r_a}^{r_b} d\varphi = \varphi(r_b) - \varphi(r_a) 
+\]
+\vspace{5px} \[
+  W_{ab}^{ext} = q[\varphi(r_b) - \varphi(r_b)] \hspace{20px} \text{relation
+  between potential and work}
+\] \vspace{5px}
+
+\paragraph{Conservation of Energy}
+
+\begin{align*}
+  W_{ab} = K_b - K_a  &= -W_{ab}^{ext} = q[\varphi(r_a) - \varphi(r_b)] \\\\
+  K_b + q\varphi(r_b) &= K_a + q\varphi(r_a) \hspace{20px} \text{Conservation of
+  Energy} 
+\end{align*}
+
+\begin{tcolorbox}[title = Conservatino of Energy]
+
+  \[
+  K_b + q\varphi(r_b) = K_a + q\varphi(r_a)
+  \]
+
+\end{tcolorbox}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = \linewidth]{screenshot 72.png}
+    \caption{Analogy with Gravity}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}  
 
