@@ -601,6 +601,339 @@ Everything is \textbf{Real} from now on.
     velocity as $c$ and $-c$}
 \end{figure}
 
+\newpage
+\noindent \textbf{Jan 26} \hrule
+\vspace{10px}
+Functions of Complex Variables
+
+\begin{itemize}
+  \item Cauchy - Riemann Eqns
+  \item Taylor Series
+  \item  $\int_{-\infty}^{\infty}$
+\end{itemize}
+\vspace{5px}
+\begin{itemize}
+  \item Singularities, Poles, Residue
+\end{itemize}
+
+The Complex Conjugate
+%1
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 5cm]{screenshot 73.png}
+    \caption{graphing complex numbers}
+\end{figure}
+
+
+\[
+\bar z = a - bi \hspace{10px} z \bar z = a^2 + b^2 = |z|^2
+\]
+
+Functions of $z = x + iy$ 
+
+\begin{align*}
+  ReZ = x \\
+  ImZ = y \\
+  |z| = \sqrt{x^2 + y^2} \\
+  \bar = z = x - iy 
+\end{align*}
+
+\begin{tcolorbox}[title = Analytic Functions]
+
+  \begin{align*}
+    \frac{1}{z} \\
+    z^2 \\
+    e^z \\
+    \sin z \\
+    \cos z
+  \end{align*}
+
+\end{tcolorbox}
+
+\begin{align*}
+  f(z) = u + iv \\\\
+  u = u(x,y) \\
+  v = v(x,y) 
+\end{align*}\\\\
+Analytic Functions are the functions where you can write 
+
+\vspace{5px} \[
+f(z + \Delta z) - f(z) = f'(z)\Delta z + O(\Delta z^2) \hspace{10px} \Delta
+z \rightarrow 0
+\] \vspace{5px}
+\textit{ \textbf{Note}}
+\[
+f(x + \Delta x, y + \Delta y) - f(x,y) = \left( \frac{\partial f}{\partial
+  x}\right) \Delta x + \left( \frac{\partial f}{\partial y} \right) \Delta
+  y + \dots 
+\]
+
+\textit{ \textbf{Check}}
+
+\[
+  e^{z + \Delta z} = e^ze^{\Delta z} = e^z ( 1 + \Delta z + \dots)
+\]
+\[
+  e^{z + \Delta z} - e^z = e^z \delta z + \dots = f''(z) \delta z + \dots 
+\]
+\vspace{5px}
+Therefore, $e^{z + \Delta z}$ is  \textit{analytic}.  However, 
+\[
+\bar z + \Delta \bar z - \bar z = \bar \Delta z
+\]
+\[
+\Delta z = \Delta x \rightarrow \bar \Delta z = (1) \Delta z \hspace{10px}
+\text{Horizontal}
+\]
+\[
+\Delta z = i \Delta y \rightarrow \bar \Delta z = -i\Delta y = (-1)\Delta
+z \hspace{10px} \text{Vertical}
+\]
+\vspace{5px}
+\hrule
+\begin{align*}
+  &f(z) = u + iv \\\\
+  &\frac{f(x + \Delta x, y) - f(x)}{\Delta x} = f'(z) \\\\
+  &\frac{f(x, y + \Delta y) - f(x,y)}{i\Delta y} = f'(z) = \frac{\partial
+  f}{\partial y} \frac{1}{i}
+\end{align*}
+
+\vspace{5px}
+\hrule
+
+\begin{align*}
+  &\frac{\partial f}{\partial x}  = \frac{1}{i} \frac{\partial f}{\partial y} \\ 
+  &\left( \frac{\partial u}{\partial x}\right) + i\left( \frac{\partial
+    v}{\partial x} \right) = \frac{1}{i} \left[\left( \frac{\partial
+      u}{\partial y} \right) + i \left( \frac{\partial v}{\partial y}
+  \right)\right] \\ 
+  &= \frac{\partial v}{\partial y}  - i \frac{\partial u}{\partial y} 
+\end{align*}
+
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Cauchy Riemann Equations] 
+  \begin{align*}
+    &\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \\
+    &\frac{\partial u}{\partial y} = - \frac{\partial v}{\partial x} 
+  \end{align*}
+
+\end{tcolorbox}
+\vspace{5px}
+\textit{ \textbf{Example}}
+
+
+\begin{align*}
+  f(z) = x^2 - y^2 + 2i xy \\\\
+  &u = x^2 - y^2 \\
+  &v = 2xy \\\\
+  &\frac{\partial u}{\partial x} = 2x = \frac{\partial v}{\partial y} \\\\
+  &\frac{\partial u}{\partial y} = -2y = - \frac{\partial v}{\partial x} 
+\end{align*}
+%2
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 8cm]{screenshot 74.png}
+    \caption{a region in the complex plane}
+\end{figure}
+
+
+
+\paragraph{Taylor Series}
+
+\[
+  f(z) = \sum_{n=0}^{\infty} a_n z^n \hspace{50px} \text{converges if analytic}
+\]
+
+Given a constant $\lambda$
+\[
+0 < \lambda < 1
+\]
+\[
+f(\lambda z) = \sum_{n=0}^{\infty} a_n (\lambda z)^n \hspace{50px}
+\text{definitely converges}
+\]
+\[
+| a_n z^n \lambda^n | = |a_n z^n | |\lambda|^n 
+\]
+
+Let $\lambda = re^{i\theta}$, $0 < r < 1$,  $|\lambda| < 1$
+
+%3
+%Taylor Series Disk of Convergence
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 7cm]{screenshot 75.png}
+    \caption{disk of convergence of power series}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 7cm]{screenshot 76.png}
+    \caption{disk of convergence is disk with maximum radius inside $R$}
+\end{figure}
+
+
+
+
+
+\mbox{} \\
+\hrule
+\vspace{10px} 
+\textit{ \textbf{Example}}
+
+\[
+f(x) = \frac{1}{x^2 + 1}
+\]
+\[
+f(z) = \frac{1}{z^2 + 1}
+\]
+
+%5
+%Using complex instead of real to calculate interval of convergence
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = \linewidth]{screenshot 77.png}
+    \caption{using complex number instead of real numbers to calculate interval
+    of convergence}
+\end{figure}
+
+
+
+\textbf{ \textit{Example}}
+
+\[i
+f(z) = \log(z) 
+\]
+%6
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 7cm]{screenshot 78.png}
+    \caption{graph of complex log to determine convergence}
+\end{figure}
+
+
+
+
+\paragraph{Path Integrals}
+
+\begin{align*}
+  \int_{\infty}^{\infty} \left(\frac{\sin x}{x} \right) dx = \pi \\
+  \int_{-\infty}^{\infty} \frac{dx}{x^2 + 1} = \arctan
+  x \big|_{-\infty}^{\infty} = \pi
+\end{align*}
+
+%7
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 8cm]{screenshot 79.png}
+    \caption{path $P$}
+\end{figure}
+
+
+\textbf{Technique}
+
+Parametrize P from $ 0 < t < \pi$ as  $z(t)$
+
+%8
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 6cm]{screenshot 80.png}
+    \caption{example of parameterizing $z(t)$}
+\end{figure}
+
+
+\[
+\int_P f(z)dz = \int_a^b f(z(t)) \left( \frac{d z}{d t} \right)dt 
+\]
+\begin{align*}
+  &f(z) = z^3 \\
+  &\frac{d z}{d t} = iRe^{it} \\
+  &f(z(t)) = \left(Re^{it} \right)^3 = R^3e^{3it}
+\end{align*}
+
+\textbf{Collect}  
+\begin{align*}
+  \int_0^\pi f(z(t) \left( \frac{d z}{d t}  \right) dt &= \int_0^\pi R^3e^{3it}
+  (iRe^{it})dt \\
+                                                       &= i R^4 \int_0^\pi e^{4 i t} = \frac{iR^4}{4i} e^{4it} \Big|_0^\pi = 0 \\
+  e^{4\pi i} &= 1
+\end{align*}
+
+\paragraph{Contour Integrals}
+%9
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 5cm]{screenshot 81.png}
+    \caption{contour integral path}
+\end{figure}
+
+
+\vspace{5px}
+Contour Integrals $ = 0$ for any analytic function that is analytic for the
+entire region C
+
+\begin{align*}
+  &\oint_C f(z) dz = 0 \\
+  &= \int_0^{2\pi} R^n e^{nit} \frac{dz}{dt}dt \\
+  &= \int_0^{2\pi} R^n e^{nit} iRe^{it} dt  \\
+  &= iR^{n+1} \int_0^{2\pi} e^{i(n+1)t} dt \\
+  &= \frac{iR^{n+1}}{i(n+1)} e^{i(n+1)t} \Big|_0^{2\pi} = 0
+\end{align*}
+
+\textbf{Effect of Singularities}
+
+Let $n = -1$
+\begin{align*}
+  f(z) = \frac{1}{z} \\
+  \oint_C \frac{dz}{z} = iR^{n+1} \int_0^{2\pi} e^{i(n+1)t} dt \\
+  = i \int_0^{2\pi} dt = 2\pi i \neq 0
+\end{align*}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 7cm]{screenshot 82.png}
+    \caption{Fundamental Theorem of Contour Integrals}
+\end{figure}
+
+
+
+\begin{tcolorbox}	
+  
+  \[
+  \int_a^b f(z) dz = F(b) - F(a) 
+  \]
+  
+  
+\end{tcolorbox}	
+\mbox{} \\
+\textbf{Example}
+
+\[
+  f(z) = \frac{1}{z^2 + 1} \hspace{30px} \alpha = i
+\]
+
+\begin{align*}
+  = \frac{1}{(z-i)(z+i)} = \frac{1}{z-i} \left(\frac{1}{z+i}\right)
+\end{align*}
+
+\begin{align*}
+  f(z) = \frac{g(z)}{z - \alpha} \\\\
+  f(z) = \frac{1}{z-\alpha} [g(\alpha) + (z-\alpha)g'(\alpha) + \dots] \\
+  = \frac{g(\alpha}{z - \alpha} + g'(\alpha) + \dots  
+\end{align*}
+
+\begin{tcolorbox}	
+  
+  \[
+  \oint_C f(z)dz = \oint_C' f(z)dz = \oint_D f(z)dz = \oint
+  \frac{g(\alpha)}{z-\alpha} dz
+  \]
+
+\end{tcolorbox}	
 
 
 
