@@ -935,8 +935,294 @@ Let $n = -1$
 
 \end{tcolorbox}	
 
+\newpage
+\noindent \textbf{Jan 31} \hrule
+\vspace{10px}
+Main Topic
+
+\begin{itemize}
+  \item Tensors (Vectors First)
+\end{itemize}
+
+\paragraph{Analytic Functions} 
+
+\[
+  f(z) = x + iy = \sum_{n=0}^{\infty} a_n (z-\alpha)^n
+\]
+Taylor series around $\alpha$ -- Disk of Convergence
 
 
+\paragraph{Cauchy Riemann Equations} 
+
+\begin{align*}
+  &f(z) = u + iv \\\\
+  u = Ref \\
+  v = Imf
+\end{align*}
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Cauchy Riemann Equations]
+
+  \begin{align*}
+    &\frac{\partial u}{\partial x}  = \frac{\partial v}{\partial y}  \\
+    &\frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x} 
+  \end{align*}
+  
+
+\end{tcolorbox}
+
+\paragraph{Hydrodynamics} 
+
+%1
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 14cm]{screenshot 91.png}
+    \caption{velocity field of a fluid obeying Cauchy-Riemann Equations}
+\end{figure}
+
+
+
+If $v(z)$ is analytic 
+
+\begin{itemize}
+  \item Incompressible: $ \frac{\partial v_x}{\partial x}  + \frac{\partial
+    v_y}{\partial y} = 0$ 
+  \item Irrotational: $ \frac{\partial v_x}{\partial y} - \frac{\partial
+    v_y}{\partial x} = 0$
+\end{itemize}
+
+
+\paragraph{Contour Integrals}
+\mbox{}\\
+%2
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 14cm]{screenshot 92.png}
+    \caption{Equation for contour integrals with a singularity: $2\pi i \sum_n
+    Res_{z \to \alpha} f$}
+\end{figure}
+
+
+
+%3
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 5cm]{screenshot 93.png}
+    \caption{it's called a singularity / simple pole because the magnitude of
+    the function approaches infinity at $\alpha$}
+\end{figure}
+
+
+
+%4
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 15cm]{screenshot 94.png}
+    \caption{Examples of integrals that are easier with Contour Integration}
+\end{figure}
+
+
+\textit{ \textbf{Theorem}} 
+
+\[
+\sum_{n=0}^{\infty} a_n (z-\alpha)^n \text{ converges with nonzero radius of
+convergence for every $\alpha \in R$}
+\]
+\[
+f(z) \text{ is a analytic function in region } R. 
+\]
+\paragraph{Computing Res $f$ at $\alpha$} 
+
+ \[
+f(z) = \frac{g(z)}{h(z)} \approx \frac{g(\alpha)}{(z-\alpha)h'(\alpha)}
+= \frac{g(\alpha) / h'(\alpha)}{z - \alpha} = \frac{R}{z - \alpha}
+\]
+\section{Tensors} 
+
+\subsection{Vectors first} 
+
+\textbf{Goal} 
+
+Geometric notion of a vector --- Algebraic notion of a vector
+
+%5
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 14cm]{screenshot 95.png}
+    \caption{matrix vector visualization}
+\end{figure}
+
+
+\vspace{5px}
+\[
+\begin{pmatrix} 
+\cos\theta & \sin\theta \\
+-\sin\theta & \cos\theta 
+\end{pmatrix}
+\]
+The Rotation Matrix
+\vspace{10px} 
+\begin{tcolorbox}	
+  
+  \[
+    A'_j = \sum_{i=1}^{2} R_{ji} A_i
+  \]
+  
+  
+
+\end{tcolorbox}	
+
+\textit{Example}
+
+\begin{align*}
+  A'_2 = \sum_{i=1}^{2} R_{2i} A_i &= R_{21} A_1 + R_{22} A_2 \\
+                                   & = -\sin\theta A_1 + \cos\theta A_2
+\end{align*}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 15cm]{screenshot 96.png}
+    \caption{Changing Coordinates - Rotation Matrices}
+\end{figure}
+
+
+
+
+\textbf{Tensors} 
+\mbox{}\\
+Made up of components $ \frac{\partial v_i}{\partial x_j} $.
+\\\\ Each derivative component of the tensor has different values from different coordinate systems. 
+\mbox{}\\\\
+\textbf{Simple Tensors}
+\mbox{}\\
+
+Two Vectors
+\[ \vec{A}, \vec{B} \]
+Then 
+\[
+  T_{ij} = A_i B_j 
+\]
+
+%7
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 7cm]{screenshot 97.png}
+    \caption{Prime vs. Unprimed coordinate axes}
+\end{figure}
+
+
+
+\[
+  T'_{ij} = A'_i B'_j = \left(\sum_{k=1}^2 R_{jk} A_k \right)\left( \sum_{l
+  = 1}^2 R_{jl} B_l \right)
+\]
+
+\[
+  = \sum_{k=1}^2 \sum_{l=1}^2 R_{ik} R_{jl} A_k B_l
+\]
+
+\begin{tcolorbox}[title = Tensor Transformation Law]
+
+\[
+  T'_{ij} = \sum_{k=1}{2} \sum_{l=1}^{2} R_{ik} R_{jl} T_{kl}
+\]
+
+\end{tcolorbox} 
+\vspace{10px} 
+\textit{ \textbf{Example}}: Theory of Elasticity 
+\\\\
+
+
+%8
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = \linewidth]{screenshot 98.png}
+    \caption{Parallel forces on surfaces perpendicular to their axis}
+\end{figure}
+
+
+
+\begin{align*}
+  &\vec{S_1} = \lim_{\Delta y \Delta z \to 0} \frac{\vec{F}_x}{\Delta y \Delta 
+  z} \\
+  &\vec{S_2} = \lim \frac{\vec{F_y}}{\Delta x \Delta z}\\
+  &\vec{S_3} = \lim \frac{\vec{F_z}}{\Delta x \Delta y} \\\\
+  & S_{ij} = (\vec{S_i})_j \hspace{10px} i,j = 1,2,3,\dots \hspace{10px}
+  \text{Stress Tensor} 
+\end{align*}
+
+Using the stress tensor: 
+
+%9
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 15cm]{screenshot 99.png}
+    \caption{to calculate the force on the triangle, you can sum the forces on
+    the edges $a,b,c$ of the triangle}
+\end{figure}
+
+
+
+The forces $S_{11}, S_{22}, S_{33}$ are "pushing forces"  
+
+The forces $S_{12}, S_{23}, S_{13}, \dots$ are "shear forces" 
+
+\paragraph{Dot Product} 
+
+%10
+\[
+  \vec{A} \cdot \vec{B} = |\vec{A}||\vec{B}|\cos\phi 
+\]
+
+In components, 
+
+\vspace{5px} \[
+  \vec{A} \cdot \vec{B} = \sum_{i=1}^{3} A_i B_i = \sum_{i=1}^3 \sum_{j=1}^3
+  C_{ij} A_i B_j 
+\] \vspace{5px}
+
+\[
+  \delta_{ij} =  C_{ij} = 1 \hspace{10px} i = j 
+\]
+\[
+  \delta_{ij} = C_{ij} = 0 \hspace{10px} i \neq j
+\]
+
+\[
+\begin{pmatrix} 
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1 
+\end{pmatrix} 
+\]
+Kronecker Delta Symbol Tensor 
+\mbox{}\\
+
+Checking Tensor Transformation Law: 
+
+\[
+  \delta'_{ij} = \sum_{k=1}^2\sum_{l=1}^2 R_{ik} R_{jl} \delta_{kl}
+\]
+
+is correct for any rotation in any dimension
+
+
+
+\paragraph{Cross Product} 
+
+\begin{align*}
+  \vec{A} \times \vec{B} = \begin{vmatrix} 
+    \hat{i} & \hat{j} & \hat{k} \\
+  A_1 & A_2 & A_3 \\
+  B_1 & B_2 & B_3 
+  \end{vmatrix} \\\\
+  (\vec{A} \times \vec{B})_i = \sum_{j=1}^3\sum_{k=1}^3 C_{ijk} A_j B_k \\\\
+  &C_{ijk} = 1 \hspace{10px} ijk = (123), (231), (312) \\
+  &C_{ijk} = -1 \hspace{10px} ijk = (132), (321), (213) \\
+  &C_{ijk} = 0 \hspace{10px} i = j, i = k, j = k
+\end{align*}
+
+The Levi - Civita Tensor
 
 \end{document}  
 
