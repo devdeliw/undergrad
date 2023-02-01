@@ -692,7 +692,7 @@ Define $\varphi(r_a, r_b)$
   Energy} 
 \end{align*}
 
-\begin{tcolorbox}[title = Conservatino of Energy]
+\begin{tcolorbox}[title = Conservation of Energy]
 
   \[
   K_b + q\varphi(r_b) = K_a + q\varphi(r_a)
@@ -704,6 +704,280 @@ Define $\varphi(r_a, r_b)$
   \centering
     \includegraphics[width = \linewidth]{screenshot 72.png}
     \caption{Analogy with Gravity}
+\end{figure}
+
+\newpage
+
+\noindent \textbf{Jan 31} \hrule
+\vspace{10px}
+\paragraph{Overview of Last Lecture} 
+
+\paragraph{Work, Energy, and Potential Road Map}
+
+Work Energy Theorem \\ 
+(1)
+\[
+  \int_{\vec{r_a}}^{\vec{r_b}} \vec{F}(\vec{r}) \cdot d\vec{r} = K_b - K_a 
+\]
+
+(2) \hspace{10px} This integral must be independent of path, also known as conservative force
+field. \\\\
+
+(3) \hspace{10px} Define $dU(r) = - \vec{F} \cdot d\vec{r}$. This is the work one must do to
+overcome the Force field and move the particle along some trajectory from $r$
+to $dr$ \\\\
+
+(4) 
+
+\[
+  \int_{\vec{r_a}}^{\vec{r_b}} dU(\vec{r}) = U(\vec{r_b}) - U(\vec{r_b})
+  = - \int_{r_a}^{r_b} \vec{F}(\vec{r}) \cdot d\vec{r} = K_a - K_b
+\]
+along \textbf{any} path
+
+\vspace{5px} \[
+U(\vec{r_b} - U(\vec{r_a}) = K_a - K_b   
+\] \vspace{5px}
+
+(5) \hspace{10px} Rearranging terms you develop \textit{Conservation of Energy} 
+
+\[
+U(\vec{r_b}) + K_b = U(\vec{r_a}) + K_a  
+\]
+
+(6) \hspace{10px}
+\[
+  U(\vec{r_b}) - U(\vec{r_a}) = -q \int_{r_a} \vec{E} \cdot d\vec{r}  
+\]
+
+(7) \hspace{10px} Define  
+\[
+\varphi(\vec{r_b}) - \varphi(\vec{r_a})
+= \frac{1}{q} [U(\vec{r_b}) - U(\vec{r_a})]  
+\]
+
+(8) 
+
+
+\begin{tcolorbox}	
+  
+  \[
+    \varphi(\vec{r_b}) - \varphi(\vec{r_a}) = -\int \vec{E} \cdot d\vec{r}   
+  \]
+  
+  
+
+\end{tcolorbox}	
+\vspace{5px}
+
+(9) \hspace{10px} Only potential differences are physically observable
+
+
+\subsection{Visualizing $\varphi(\vec{r})$}
+
+%1
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 7cm]{screenshot 84.png}
+    \caption{Equipotential Contours}
+\end{figure}
+
+
+
+
+\begin{align*}
+  &d\varphi(\vec{r}) = - \vec{E} \cdot \vec{r} \\
+  &d\vec{r}_\perp \perp \vec{E}(\vec{r}) \\
+  &d\varphi(\vec{r}) = \vec{E}(\vec{r}) \cdot d\vec{r}_\perp = 0 
+\end{align*}
+
+\paragraph{Potential of a point charge $q$}
+
+%2
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 7cm]{screenshot 85.png}
+    \caption{Equipotential Spheres}
+\end{figure}
+
+
+
+\begin{align*}
+  \vec{E}(\vec{r}) = \frac{q}{4\pi\varepsilon_0 r^2} \hat{r} \\
+  \varphi(\vec{r}_b) - \varphi(\vec{r}_a) &= -\int_{\vec{r_a}}^{\vec{r_b}}
+  \vec{E}(\vec{r}) \cdot d\vec{r} \\
+                              &= \frac{q}{4\pi\varepsilon_0}\int_{r_a}^{r_b}\frac{1}{r^2}dr \\
+  \varphi(r_b) - \varphi(r_a) = \frac{q}{4\pi\varepsilon_0} \frac{1}{r}
+  \Big|_{r_a}^{r_b} = \frac{q}{4\pi\varepsilon}\left(\frac{1}{r_b}
+    - \frac{1}{r_a} \right)
+\end{align*}
+
+Choose $r_a = \infty$ 
+
+\[
+  \varphi(r_b) - \varphi(\infty) = \frac{q}{4\pi\varepsilon r}
+\]
+
+Free to choose $\varphi(\infty) = 0$ 
+
+\vspace{5px}
+\begin{tcolorbox}
+  \[
+  \varphi(r) = \frac{q}{4\pi\varepsilon_0 r} = \frac{1}{4\pi\varepsilon_0}
+  \frac{q}{r}
+  \]
+\end{tcolorbox}
+\vspace{5px}
+
+The difference in potential energy of a particle between two points depends on
+the sign of the charge. Potential is the potential energy divided by the
+charge. \\
+
+
+A word about units. 
+
+\begin{align*}
+  &\text{Work} = \text{Joules} \\
+  &q = \text{Coulombs} \\
+  &\varphi = \frac{\text{Joules}}{\text{Coulombs}} = \text{Volt}
+\end{align*}
+\hrule
+\vspace{10px} 
+
+\begin{align*}
+  &d\varphi(r) = \vec{E} \cdot d\vec{r} \\
+  &d\varphi(r) = \nabla \varphi(r) \cdot d\vec{r} \\\\
+  &\vec{E}(r) = -\nabla\varphi(r)
+\end{align*}
+
+\subsection{Potential of arbitrary charge distributions}
+
+General Math Problem 
+
+\begin{itemize}
+  \item $\vec{E}(\vec{r}) = -\nabla \varphi(\vec{r})$
+  \item Maxwell  $\nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0}$
+\end{itemize}
+
+\[
+  \nabla \cdot \nabla \varphi(\vec{r}) = -\frac{\rho(\vec{r})}{\varepsilon_0}
+  = \nabla^2 \varphi(\vec{r})
+\]
+\[
+  \nabla^2 \varphi = \nabla \cdot \nabla \varphi = \left( \frac{\partial^2 \varphi}{\partial
+    x^2} + \frac{\partial^2 \varphi}{\partial y^2} + \frac{\partial^2
+    \varphi}{\partial z^2} \right) 
+\]
+
+\begin{tcolorbox}[title = Poisson's Equation]
+
+  \[
+    \nabla^2 \varphi(\vec{r}) = -\frac{\rho(\vec{r})}{\varepsilon_0}
+  \]
+
+\end{tcolorbox}
+
+Charge-free region of space: $\nabla^2 \varphi(\vec{r}) = 0$ --- Laplace's
+Equation
+
+\[
+  \nabla^2 \text{ is known as the Laplacian Operator}
+\] \vspace{10px} 
+
+%3
+%potential at a point P from a volume charge a distance $\vec{r'} - \vec{r}$
+%away
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 12cm]{screenshot 86.png}
+    \caption{potential at a point $P$ from a volume charge a distance  $\vec{r'}
+    - \vec{r}$ away}
+\end{figure}
+
+
+\textbf{ \textit{Example}}: Potential of a uniformly charged disk on the
+symmetry of axis 
+
+%4
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 6cm]{screenshot 87.png}
+    \caption{A point on the $z$ axis experiences a net vertical electric field}
+\end{figure}
+
+
+
+\begin{align*}
+  \varphi(\vec{r}) = \frac{1}{4\pi\varepsilon_0} \iint d^2 r'
+  \frac{\sigma(\vec{r'})}{|\vec{r'} - \vec{r}|}
+= \frac{\sigma}{4\pi\varepsilon_0} \iint d^2 r' \frac{1}{|\vec{r'} - \vec{r}|} 
+\end{align*}
+
+%5
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 9cm]{screenshot 88.png}
+    \caption{calculating $|\vec{r} - \vec{r'}|$ using Pythagorean Theorem}
+\end{figure}
+
+
+
+%6
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 6cm]{screenshot 89.png}
+    \caption{Jacobian of Polar coordinates}
+\end{figure}
+
+
+
+\begin{align*}
+  &\varphi(\vec{r}) = \frac{\sigma}{4\pi\varepsilon_0} \iint \frac{1}{ \sqrt{z^2
+  + r^2}} \\\\
+  &\varphi(z) = \frac{\sigma}{4\pi\varepsilon} \int_0^{2\pi} \int_0^R \frac{r}{ \sqrt{z^2 + r^2}}
+  dr' d\theta \\\\
+  \text{After integrating over $\theta$ gives factor of $2\pi$ }\\\\
+  &\varphi(z) = \frac{\sigma}{2\varepsilon_0} \int_0^R \frac{r'}{ \sqrt{z^2
+  + r'^2}} dr' = \frac{\sigma}{2\varepsilon_0} \sqrt{z^2 + r'^2} \Big|_0^R \\\\
+  &\varphi(z) = \frac{\sigma}{2\varepsilon_0} [\sqrt{z^2 + R^2} - z]
+\end{align*}
+
+\vspace{5px} \[
+  \lim_{z\to 0} \varphi(z) = \frac{\sigma}{2\varepsilon_0}R
+\] \vspace{5px}
+\[
+  \lim_{z \to \infty} = \frac{\sigma}{2\varepsilon_0} \lim_{z \to \infty}
+  [ \sqrt{z^2 + R^2} - z] 
+\]
+
+Factoring out $z$ 
+
+\vspace{5px} \[
+  z \left(1 + \frac{R^2}{z^2} \right)^{1/2} - z
+\] \vspace{5px}
+
+Taylor Expanding 
+
+\vspace{5px} \[
+z(1 + \frac{R^2}{2z^2} + \dots - 1 ) = \frac{R^2}{2z}
+\] \vspace{5px}
+
+Express in terms of total charge $Q$ 
+
+\begin{align*}
+  &Q = \pi R^2 \sigma \\\\
+  &\lim_{z \to \infty} \varphi(z) = \frac{Q}{4\pi \varepsilon_0 z} 
+\end{align*}
+
+
+%7
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 6cm]{screenshot 90.png}
+    \caption{potential vs. z}
 \end{figure}
 
 
@@ -721,8 +995,4 @@ Define $\varphi(r_a, r_b)$
 
 
 
-
-
-
-\end{document}  
-
+\end{document} 
