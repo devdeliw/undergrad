@@ -976,21 +976,216 @@ Express in terms of total charge $Q$
 
 \begin{figure}[H]
   \centering
-    \includegraphics[width = 6cm]{screenshot 90.png}
+    \includegraphics[width = 10cm]{screenshot 90.png}
     \caption{potential vs. z}
+\end{figure}
+
+\newpage
+\noindent \textbf{Feb 2} \hrule
+\vspace{10px}
+Dipoles and Theorems for solving Laplace's Equation and Poisson's Equation
+
+\subsection{Dipoles}
+
+%1
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = \linewidth]{screenshot 128.png}
+    \caption{Analogy to Water Molecule + potential of arbitrary charge}
 \end{figure}
 
 
 
 
+\[
+  \varphi(r') = \frac{1}{4\pi \varepsilon_0}\int d^3 r'
+  \frac{\rho(r')}{|\vec{r'} - \vec{r}}
+\]
+Expanding in powers of $(a/r)$
+
+\begin{align*}
+  |\vec{r'} - \vec{r}| &= [(\vec{r'} - \vec{r}) \cdot (\vec{r'}
+  - \vec{r})]^{1/2} \\    
+                       &= (r'^2 + r^2 - 2\vec{r} \cdot \vec{r}')^{1/2} \\
+                       &= r\left(1 - 2 \hat{r} \cdot \frac{\vec{r'}}{r}
+                       + \frac{r'^2}{r^2}\right)^{1/2}
+\end{align*}
+
+
+Therefore, 
+
+\begin{align*}
+  |\vec{r} - \vec{r'}| \approx \left( 1 - \frac{\hat{r} \cdot \vec{r'}}{r}
+    + \frac{r'^2}{2r^2} \right)
+\end{align*}
+
+Keep lowest order term, 
+
+\begin{align*}
+  |\vec{r} - \vec{r'}| \approx r\left(1 - \frac{ \hat{r}}{r} \cdot \vec{r'}
+    \right)
+\end{align*}
+
+Substitute into expression for $\varphi$
+\begin{comment}
+\begin{align*}
+  \varphi(\vec{r}) &= \frac{1}{4\pi\varepsilon_0} \int d^3 r'
+  \frac{\rho(\vec{r'})}{r\left(1 - \hat{r} \cdot \frac{\vec{r'}}{r}} \\
+                   &= \frac{1}{4\pi\varepsilon_0r} \int d^3 r' \rho(\vec{r'})
+                 \left(1 + \hat{r} \cdot \frac{\vec{r'}}{r}\right) 
+\end{align*}
+\end{comment}
+
+\begin{align*}
+  \varphi(\vec{r}) \approx \frac{1}{4\pi\varepsilon} \int d^3r'
+  \frac{\rho(\vec{r'})}{r \left(1 - \hat{r} \cdot \frac{\vec{r'}}{r}\right)} 
+\end{align*}
+
+
+\begin{align*}
+  \varphi(\vec{r}) = \frac{1}{4\pi\varepsilon_0r} \int d^3r' \rho(\vec{r'})
+  + \frac{1}{4\pi\varepsilon_0r^2} \cdot \int d^3r' \rho(\vec{r'}) \vec{r'}
+  + \dots
+\end{align*}
 
 
 
 
+Charge $Q = \int d^3 r' \rho(\vec{r'}) \hspace{10px} \text{"monopole moment"}$
+
+\[
+  \vec{p} = \int d^3 r' \rho(\vec{r'}) \vec{r'} \hspace{10px} \text{"dipole
+  moment"}
+\]
+\[
+  \varphi(\vec{r}) \approx \frac{Q}{4\pi\varepsilon r} + \frac{\vec{p} \cdot
+  \hat{r}}{4\pi\varepsilon_0 r^2} + \dots +  \frac{\text{Quadruple
+Moment}}{r^3} + \dots
+\]
+
+The Quadruple Moment is a tensor defined by $Q_{ij}$
+
+%2
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = \linewidth]{screenshot 129.png}
+    \caption{E field lines of dipole}
+\end{figure}
+
+
+
+\paragraph{Symmetry Requirement on dipole moment} 
+
+%3
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 5cm]{screenshot 130.png}
+    \caption{Arbitrary distribution $\rho(\vec{r})$}
+\end{figure}
+
+
+
+There is a point inside the distribution (where I can place the origin) such
+that 
+
+\[
+  \rho(\vec{r}) = \rho(-\vec{r}) 
+\]
+\[
+\vec{p} = \int d^3r \rho(\vec{r}) \hat{r} \rightarrow 0 \hspace{10px}
+\rho(\vec{r}) = \rho(-\vec{r})
+\]
+%4
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 15cm]{screenshot 131.png}
+    \caption{Graphs for if dipole moment is 0 or not}
+\end{figure}
 
 
 
 
+\subsection{Torque and Force on Dipoles}
+
+
+Consider a Uniform Electric Field $\vec{E} = E_0 \hat{i}$ \\
+
+%5
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = \linewidth]{screenshot 132.png}
+    \caption{Connection to torque and force - dipoles may have net 0 force but
+    a nonzero torque}
+\end{figure}
+
+
+
+Calculate Torque: $\vec{N} = \vec{r} \times \vec{F}$
+
+%6
+
+\begin{align*}
+  &d\vec{F} = dq \vec{E} = d^3r' \rho(\vec{r'}) \vec{E}(\vec{r'}) \\
+  &d\vec{N} = d^3r' \rho(\vec{r'}) \vec{r'} \times \vec{E}(\vec{r'}) \\
+  &\vec{N} = \iiint d^3 r' \rho(\vec{r'}) \vec{r'} \times \vec{E}(\vec{r'})
+\end{align*}
+
+For a uniform field, 
+
+\[
+  \vec{N} = \left[\iiint d^3r' \rho(\vec{r'}) \vec{r'} \right] \times \vec{E}_0
+\]
+\[
+  \vec{N} = \vec{p} \times \vec{E_0}
+\]
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Torque Equation]
+  
+  \[
+    \vec{N} = \vec{p} \times \vec{E_0}
+  \]
+  
+  
+
+\end{tcolorbox}
+
+%7
+
+
+Consider $x$ component $E_x$,\\ 
+
+Approximation 
+
+\begin{align*}
+  E_x(\vec{r}) = E_x(0) + \vec{r'} \cdot \nabla E_x(r)\Big|_{\vec{r} = 0} + \dots
+\end{align*}
+\begin{align*}
+  F_x = \iiint d^3r' \rho(\vec{r'}) [E_x(0) + \vec{r'} \cdot \nabla E_x(0)]
+\end{align*}
+
+2nd Term, 
+
+\begin{align*}
+  F_x = \left[\iiint d^3r' \rho(\vec{r'}) \vec{r'} \right] \cdot \nabla E_x(0)
+  = \vec{p} \cdot \nabla E_x (\vec{r}) \Big|_{\vec{r}=0}
+\end{align*}
+
+Writing this out, 
+
+\begin{align*}
+  F_x = p_x \frac{\partial E_x}{\partial x} + p_y \frac{\partial E_x}{\partial
+  y} + p_z \frac{\partial E_x}{\partial z} 
+\end{align*}
+
+Answer, 
+
+\[
+  \vec{F} = (\vec{p} \cdot \nabla)\vec{E}
+\]
 
 
 
