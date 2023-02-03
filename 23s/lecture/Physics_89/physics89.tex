@@ -1089,7 +1089,7 @@ The Rotation Matrix
 
 
 \textbf{Tensors} 
-\mbox{}\\
+\mbox{}\\\\
 Made up of components $ \frac{\partial v_i}{\partial x_j} $.
 \\\\ Each derivative component of the tensor has different values from different coordinate systems. 
 \mbox{}\\\\
@@ -1124,7 +1124,7 @@ Then
 \begin{tcolorbox}[title = Tensor Transformation Law]
 
 \[
-  T'_{ij} = \sum_{k=1}{2} \sum_{l=1}^{2} R_{ik} R_{jl} T_{kl}
+  T'_{ij} = \sum_{k=1}^{2} \sum_{l=1}^{2} R_{ik} R_{jl} T_{kl}
 \]
 
 \end{tcolorbox} 
@@ -1223,6 +1223,257 @@ is correct for any rotation in any dimension
 \end{align*}
 
 The Levi - Civita Tensor
+
+
+\newpage
+\noindent \textbf{Feb 2} \hrule
+\vspace{10px}
+\textit{ \textbf{HW2 Oscillations}} 
+\mbox{}\\\\
+Oscillations - All equations ~ $\sin (\omega t + \phi) = A \sin \omega
+t + B\cos \omega t$ 
+
+%1
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = \linewidth]{screenshot 122.png}
+    \caption{HW2 Problem Set Q2 Analogy to AC circuits}
+\end{figure}
+
+
+
+
+\paragraph{Tensor Recap} 
+
+Collection of components $T_{ij}$ 
+
+%2
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 10cm]{screenshot 123.png}
+    \caption{Rotation Matrices}
+\end{figure}
+
+
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Transformation Theory]
+  
+  \[
+    T_{ij} = \sum_{k=1}^{2} \sum_{l=1}^{2} R_{ik}R_{jl}T_{kl}
+  \]
+  
+  
+
+\end{tcolorbox}
+
+
+\begin{align*}
+  \vec{A} \cdot \vec{B} = \sum_{k=1}^2 A_k B_k 
+\end{align*}
+
+\subsection{Einstein Convention}
+
+\[ \vec{A} \cdot \vec{B} = A_k B_k \hspace{10px} \text{Dropping the Summation
+- implied sum regardless}
+\]
+
+\paragraph{Tensor Equations}
+
+\[
+  S_{ij} = T_{ij} + \sum_{k=1}^2 W_{ik}P_{jk}
+\]
+\[
+  S'_{ij} = T'_{ij} + W'_{ik} P'_{jk}
+\]
+
+\textbf{ \textit{Hydrodynamics}}
+\mbox{}\\\\
+\noindent $S_{ij} = \text{stress tensor}$
+\mbox{}\\
+$W_{ij} = \frac{\partial v_j}{\partial x_j} = \partial_i v_j$ 
+\mbox{}\\
+$S_{ij} = \alpha (\partial_i v_j + \partial_j v_i) + \beta (\partial_k
+v_k)\delta_{ij}$
+
+\[
+  \sum_{k=1}^{3} \partial_k v_k = (\nabla \cdot \vec{v})
+\]
+
+\textit{ \textbf{Cross Product}}
+\[
+(\vec{A} \times \vec{B})_k = \sum_{l=1}^{3} \sum_{m=1}^{3}  \varepsilon_{klm}
+A_l B_m
+\]
+\[
+  (\vec{A} \times \vec{B})_3 = A_1B_2 - A_2B_1 
+\]
+
+\[
+  E'_{klm} = R_{ki} R_{mn} E_{ijn} \hspace{10px} \text{Einstein notation}
+\]
+\[
+ \sum_{i=1}^{3}  \sum_{j=1}^{3}  \sum_{n=1}^{3}   
+\]
+
+\subsection{Uses of Tensors}  
+
+\begin{align*}
+  [\vec{A} \times (\vec{B} \times \vec{C})]_k = (\vec{A} \cdot
+  \vec{C})\vec{B}_k
+  - (\vec{A} \cdot \vec{B})\vec{C}_k        
+\end{align*}
+
+Given 
+
+\[
+  (\vec{A} \times \vec{B})_k = \varepsilon_{klm} A_l B_n 
+\]
+\begin{align*}
+  [\vec{A} \times (\vec{B} \times \vec{C})]_k &= \varepsilon_{klm} A_l (\vec{B}
+  \times \vec{C})_m \\
+                                              &= \varepsilon_{klm} A_l
+                                              \varepsilon_{mij} B_iC_j \\
+                                              &= (\delta_{kj} \delta_{lj}
+                                              - \delta_{kj}\delta_{li})A_lB_iC_j
+                                              \\
+                                              &= \delta_{ki}\delta_{lj}A_l B_i
+                                              C_j - \delta_{kj} \delta_{li}
+                                              A_lB_iC_j \\
+                                              &= A_j C_jB_k
+\end{align*}
+
+\begin{align*}
+  &\sum_{m=1}^{3} \varepsilon_{klm} \varepsilon_{mij} = \delta_{ki} \delta_{lj}
+  - \delta_{kj} \delta_{li} \\\\
+  &\sum_{l=1}^{2} \delta_{lj}A_l = 0A_1 + 1A_2 + 0A_3 = A_j  \hspace{10px}
+  \text{since $\delta_{lj} =1$ only if $l=j$} 
+\end{align*}
+
+\section{Vector Spaces}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 8cm]{screenshot 124.png}
+    \caption{Vector space properties example}
+\end{figure}
+
+
+\[
+  \vec{A}, \vec{B} \rightarrow \vec{A} + \vec{B} 
+\]
+\[
+  \vec{A} \rightarrow \lambda \vec{A}
+\]
+\subsection{Complex Vector Spaces}
+
+\[
+  \vec{A} = \begin{pmatrix} A_1 \\ A_2 \end{pmatrix}, \vec{B} = \begin{pmatrix}
+B_1 \\ B_2 \end{pmatrix} 
+\]
+\[
+  \vec{A} + \vec{B} = \begin{pmatrix} 
+  A_1 + B_1 \\
+  A_2 + B_2 
+  \end{pmatrix} 
+\]
+
+\paragraph{Quantum Computing} 
+
+\begin{align*}
+  0 \rightarrow \begin{pmatrix} 1 \\ 0 \end{pmatrix} \\
+  1 \rightarrow \begin{pmatrix} 0 \\ 1 \end{pmatrix}
+\end{align*}
+
+%4
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 10cm]{screenshot 125.png}
+    \caption{Analogy to Lasers in Quantum Computing}
+\end{figure}
+
+
+
+\[
+\begin{pmatrix}
+  1 \\ i 
+\end{pmatrix} = \vec{A} + i\vec{B} \hspace{10px} \text{circularly polarized}  
+\]
+%5
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 6cm]{screenshot 126.png}
+    \caption{Quick vectors geometric fact}
+\end{figure}
+
+
+
+Functions $f(x)$ are also vector spaces since 
+
+\begin{align*}
+  & f(x) + g(x) = h(x) \\
+  & \lambda f(x) 
+\end{align*}
+
+\paragraph{Linearly Independent Vectors} 
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 12cm]{screenshot 127.png}
+    \caption{Linearly Dependent and Independent Vectors}
+\end{figure}
+
+
+
+\begin{align*}
+  &\vec{A_1}, \vec{A_2}, \dots, \vec{A_n} \\ 
+  &0 = \lambda_1 \vec{A_1} + \dots + \lambda_n \vec{A_n} \hspace{10px}
+  \text{linear combination of $A_1 \rightarrow A_n$}
+\end{align*}
+
+\paragraph{Inner Product} 
+
+\[
+  \vec{A} \cdot \vec{B} = \sum_{k=1}^{n} A_k B_k 
+\]
+\[
+\langle \vec{A} \big| \vec{B} \rangle = \sum_{k=1}^{n} \bar A_k B_k
+\]
+
+\[
+|\vec{A}|^2 = \langle \vec{A} \big| \vec{A} \rangle = \sum_{k=1}^{3} |A_k|^2 \geq 0 
+\]
+
+\begin{align*}
+  &\langle \vec{A} \big| \vec{B} + \vec{C} \rangle = \langle \vec{A} \big|
+  \vec{B}\rangle + \langle \vec{A} \big| \vec{C}\rangle \\
+  &\langle \vec{A} \big| \lambda \vec{B} \rangle = \lambda \langle \vec{A}
+  \big| \vec{B} \rangle \\
+  & \langle \vec{B} \big| \vec{A} \rangle = (\langle \vec{A} \big| \vec{B}
+  \rangle )\ast
+\end{align*}
+
+\begin{align*}
+  |\langle \vec{A} \big| \vec{B} \rangle |^2 \leq |\vec{A}|^2 |\vec{B}|^2 \hspace{10px}
+  \text{Cauchy-Schwarz Inequality}
+\end{align*}
+
+\paragraph{Algorithm}
+
+\[
+f_1, f_2, f_3
+\]
+
+ \[
+\vec{e_1} = \frac{\vec{f_1}}{|f_1|} 
+\]
+\[
+\vec{e_2} \rightarrow \vec{u_2} = f_2 - (\vec{e_1}\vec{f_2})\vec{e_1} + \dots
+\]
+
+
+
+
 
 \end{document}  
 
