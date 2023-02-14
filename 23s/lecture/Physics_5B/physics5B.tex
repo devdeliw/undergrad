@@ -1186,8 +1186,389 @@ Answer,
 \[
   \vec{F} = (\vec{p} \cdot \nabla)\vec{E}
 \]
+\newpage
+\noindent \textbf{Feb 7} \hrule
+\vspace{10px}
+
+\noindent Derived 
+\begin{tcolorbox}
+  \[
+  \vec{F} = (\vec{p} \cdot \nabla) \vec{E}
+\]
+\end{tcolorbox}
+
+\begin{align*}
+  \vec{p} \cdot \nabla = \frac{\partial p_x}{\partial x} + \frac{\partial
+  p_y}{\partial y}  + \frac{\partial p_z}{\partial z}  
+\end{align*}
+
+For example, lets say I want the x component of the force, 
+
+\begin{align*}
+  F_x = p_x\frac{\partial }{\partial x}p_x +p_y \frac{\partial }{\partial y}_x
++ p_z\frac{\partial }{\partial z}E_x 
+\end{align*}
+
+if $\vec{E} $ parallel to $\hat{i}$, but depends on $k$ component 
+
+%1
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 7cm]{screenshot 164.png}
+    \caption{parallel E fields}
+\end{figure}
+
+
+\[
+F_x = p_z \frac{\partial E_x(z)}{\partial x} 
+\]
+
+%2
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 14cm]{screenshot 165.png}
+    \caption{Dipole may experience torque even with a net force of 0}
+\end{figure}
+
+
+
+`
+\subsection{Properties of sol'ns to $\nabla^2 \varphi = -\frac{\rho}{\varepsilon_0}$}
+
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Poisson's Equation]
+  
+  \[
+    \nabla^2 \varphi(\vec{r}) = \frac{-\rho(\vec{r} }{|\vec{r} - \vec{r'}| }
+  \]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Solution]
+  \[
+  \varphi(\vec{r}) = \frac{1}{4\pi\varepsilon}\iiint d^3 r'
+  \frac{\rho(\vec{r'})}{|\vec{r} - \vec{r'}|} 
+\]
+\end{tcolorbox}
+
+\textit{ \textbf{Properties.}} \mbox{}\\\\
+
+(1) Superposition \hspace{10px} $\varphi_1(\vec{r)}$ is a solution for
+$\rho_1(\vec{r})$ and $\varphi_2(\vec{r})$ is a solution for $\rho_2(\vec{r})$ 
+
+\[
+\varphi(\vec{r}) = \alpha\phi_1(\vec{r_1}) + \beta \phi_2(\vec{r}) \text{ is
+a solution to } \rho(\vec{r}) = \alpha \rho_1(\vec{r}) + \beta \rho_2(\vec{r})  
+\] \vspace{5px}
+
+(2) Smoothness of solutions to Laplace's Eq. $\nabla^2 \varphi(\vec{r}) = 0 $
+
+\[
+\frac{\partial^2 \varphi}{\partial x^2}  + \frac{\partial^2 \varphi}{\partial
+y^2} + \frac{\partial^2 \varphi}{\partial z^2}  = 0 
+\] \vspace{5px}
+Since all three derivatives can not have the same sign, there is no true
+minimum of $\varphi(\vec{r}) $. But can have two with same sign and one with
+opposite -- known as a saddle point. \mbox{} \\\\
+
+
+(3) Uniqueness: only one solution that satisfies this boundary condition
+\mbox{}\\\\
+%3
+%Arbitrary surface S with no charge inside
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 8cm]{screenshot 166.png}
+    \caption{Arbitrary surface S with no interior charge}
+\end{figure}
+
+
+
+Consider the quantity $\phi \nabla \phi$, Applying divergence theorem, 
+
+\begin{align*}
+  \oint_S (\phi \nabla \phi) \cdot d\vec{a} = \iiint_V d^3r \nabla \cdot (\phi
+  \nabla \phi) \\\\
+  \nabla \cdot (\phi \nabla \phi) = |\nabla \phi|^2 + \phi \nabla^2 \phi = \phi
+  \\\\
+  \oint_S \phi \nabla \phi \cdot d\vec{a} = \iiint_V d^3r |\nabla \phi|^2
+\end{align*}
+
+\textit{ \textbf{Proof by Contradiction}} 
+
+Assume it isn't unique -- that there are 2 solutions, $\phi_1, \phi_2$ and they
+both satisfy the same boundary conditions, $\varphi(S)$ \mbox{}\\
+
+By linearity: $\phi = \phi_1 - \phi_2$ is also a solution \mbox{}\\\\
+
+But $\varphi(S)$ on the boundary is $0$. Therefore, 
+
+\[
+\iiint_V d^3r |\nabla \phi|^2 = 0 \text{ with the linearity solution since the
+closed integral is zero}
+\]
+
+$\nabla \phi$ must be zero everywhere $\rightarrow$ $\vec{E} = 0$ \mbox{}\\\\
+
+Finally, $\phi_1 - \phi_2$ can differ only by a constant which both correspond
+to the same electric field. 
+
+
+\section{Conductors}  
+
+A conductor is a medium in which current flows in response to an electric
+field. \mbox{}\\\\  
+
+Consider a conductor with a sudden application of an electric field
+%4
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 10cm]{screenshot 167.png}
+    \caption{Conductor with electric field}
+\end{figure}
 
 
 
 
-\end{document} 
+
+
+\newpage
+\noindent \textbf{Feb 14} \hrule
+\vspace{10px}
+Today:
+\begin{itemize}
+  \item Method of Images
+  \item Capacitance 
+  \item Energy stored in an E-Field
+\end{itemize}
+
+%1
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 12cm]{screenshot 168.png}
+    \caption{Method of Images}
+\end{figure}
+
+
+
+\begin{align*}
+  &\vec{E}_+ = \frac{q}{4\pi\varepsilon}\frac{-h \hat{k}+ \vec{r}}{(h^2
+  + r^2)^{3/2}} \\
+  &\vec{E}_- = \frac{-q}{4\pi\varepsilon} \frac{h \hat{k} + \vec{r}}{(h^2
+  + r^2)^{3/2}}
+\end{align*}
+
+Add to get the total field 
+
+\[
+  \vec{E} = \frac{-q}{2\pi\varepsilon} \frac{h \hat{k}}{(h^2 + r^2)^{3/2}}
+\]
+
+\begin{align*}
+  &\sigma(r) = \varepsilon \vec{E} = \frac{-q}{2\pi} \frac{h}{(h^2
+  + r^2)^{3/2}}\\\\
+  \text{Total Charge Q?} \\
+  & Q = \int_0^\infty d^2r \sigma(r) = \frac{-q}{2\pi} \int 2\pi r dr
+  \frac{h}{(h^2 + r^2)^{3/2}} = -q
+\end{align*}
+
+%2
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 6cm]{screenshot 169.png}
+    \caption{surface charge density as function of r}
+\end{figure}
+
+
+\section{Capacitance} 
+
+Basic circuit element \mbox{} \\
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Capacitor [id:dp8452732223441306]
+\draw   (100,125) -- (136,125) (144,105) -- (144,145) (136,105) -- (136,145) (144,125) -- (180,125) ;
+
+
+\end{tikzpicture}\\
+
+Generalized Capacitor can be any shape of conductors of opposite charge close
+to one another. \mbox{} \\
+
+You can also have a \textit{system} of conductors 
+
+\begin{center}
+  
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Free Drawing [id:dp13516490983958307] 
+\draw  [line width=2.25] [line join = round][line cap = round] (120,134) .. controls (137.94,134) and (137.7,135.18) .. (141,155) .. controls (141.44,157.63) and (141.52,160.39) .. (141,163) .. controls (140,167.99) and (132.72,169.11) .. (128,171) .. controls (119.35,174.46) and (99.7,181.37) .. (90,178) .. controls (86.21,176.68) and (83.75,172.93) .. (81,170) .. controls (78.14,166.95) and (72.25,162.14) .. (75,159) .. controls (76.89,156.84) and (79.79,155.82) .. (82,154) .. controls (85.64,151) and (87.78,146.11) .. (92,144) .. controls (96.64,141.68) and (118,145.64) .. (118,137) ;
+%Shape: Free Drawing [id:dp11119911065400023] 
+\draw  [line width=2.25] [line join = round][line cap = round] (230,71) .. controls (238,71) and (246.01,70.69) .. (254,71) .. controls (257.98,71.15) and (272.49,93.69) .. (270,102) .. controls (267.32,110.93) and (255.57,114.75) .. (249,120) .. controls (246.53,121.98) and (248.43,126.98) .. (246,129) .. controls (244.46,130.28) and (241.99,128.82) .. (240,129) .. controls (232.69,129.66) and (225.31,130.7) .. (218,130) .. controls (209.92,129.23) and (210.03,118.16) .. (209,112) .. controls (206.83,98.97) and (214.17,84.77) .. (225,78) .. controls (229.03,75.48) and (227.4,71) .. (232,71) ;
+%Shape: Free Drawing [id:dp8040753801936908] 
+\draw  [line width=2.25] [line join = round][line cap = round] (222,169) .. controls (224.61,169) and (237.59,165.86) .. (242,171) .. controls (248.67,178.79) and (244.3,190.39) .. (251,199) .. controls (257.32,207.12) and (265,206.22) .. (265,217) .. controls (265,222.97) and (252.93,231.83) .. (252,233) .. controls (251.01,234.25) and (244.63,247.35) .. (240,250) .. controls (234.2,253.31) and (217.5,228.9) .. (216,227) .. controls (204.63,212.52) and (209.06,201.89) .. (212,185) .. controls (213.71,175.18) and (213.47,171.53) .. (221,164) ;
+%Shape: Free Drawing [id:dp4629408524103269] 
+\draw  [line width=2.25] [line join = round][line cap = round] (107,37) .. controls (113.34,37) and (120.72,34.48) .. (126,38) .. controls (133.59,43.06) and (132.64,54.64) .. (138,60) .. controls (144.89,66.89) and (156.46,65.08) .. (150,78) .. controls (148.18,81.64) and (146.64,86.18) .. (143,88) .. controls (125.29,96.86) and (111.65,88.31) .. (104,73) .. controls (100.99,66.97) and (96.95,59.16) .. (99,52) .. controls (99.02,51.93) and (104.56,40.27) .. (105,40) .. controls (106.46,39.12) and (110,40.47) .. (110,38) ;
+%Shape: Free Drawing [id:dp12386192621787884] 
+\draw  [line width=2.25] [line join = round][line cap = round] (52,30) .. controls (52,21.92) and (80.84,6.91) .. (85,5) .. controls (118.1,-10.21) and (162.68,-12.28) .. (197,-3) .. controls (220.84,3.44) and (221.12,6.32) .. (244,17) .. controls (253.44,21.41) and (267.22,25.66) .. (277,31) .. controls (302.95,45.16) and (331.64,70.88) .. (341,100) .. controls (352.33,135.25) and (351,160.42) .. (350,200) .. controls (349.35,225.83) and (336.36,275.12) .. (317,293) .. controls (300.15,308.55) and (262.9,311.71) .. (244,313) .. controls (195.54,316.3) and (133.15,308.85) .. (98,271) .. controls (90.75,263.2) and (66.94,240.28) .. (64,230) .. controls (48.46,175.59) and (54.51,117.46) .. (54,62) .. controls (53.91,52.06) and (52,42.38) .. (52,32) ;
+
+% Text Node
+\draw (122,147) node [anchor=north west][inner sep=0.75pt]   [align=left] {Q};
+% Text Node
+\draw (228,97) node [anchor=north west][inner sep=0.75pt]   [align=left] {Q};
+% Text Node
+\draw (224,201) node [anchor=north west][inner sep=0.75pt]   [align=left] {\mbox{-}Q};
+% Text Node
+\draw (113,57) node [anchor=north west][inner sep=0.75pt]   [align=left] {\mbox{-}Q};
+% Text Node
+\draw (336,276.4) node [anchor=north west][inner sep=0.75pt]    {$\phi \ =\ 0$};
+% Text Node
+\draw (305,2.4) node [anchor=north west][inner sep=0.75pt]    {$\sum Q_{i} \ =\ 0$};
+
+
+\end{tikzpicture}
+\end{center} \mbox{} \\
+
+\noindent The potential everywhere is uniquely determined by the $Q_i$ because of
+linearity $\nabla^2 \varphi$ is proportional to $\rho$ \mbox{} \\\\
+
+In general, $\Phi_i = \sum P_{ij}Q_j$
+\mbox{} \\\\
+
+\[
+  P_{ij} = \text{potential matrix} \hspace{10px} P_i \text{ is a symmetric
+  matrix}
+\]
+
+\[
+  \Big( Q_i \Big) = \Big( P_{ij}^{-1} \Big) \Big(\Phi_i \Big)
+\]
+
+This defines the Capacitance Matrix: 
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Capacitance Matrix]
+  
+  \[
+    C_{ij} = P_{ij}^{-1}; Q_i = \sum_j C_{ij} \Phi_i
+  \]
+  
+
+\end{tcolorbox} \mbox{} \\\\
+
+\noindent \textit{ \textbf{Example}}
+
+2 Conductor system with charge Q, -Q
+
+%4
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 7cm]{screenshot 170.png}
+    \caption{Capacitance between two arbitrary conductors }
+\end{figure}
+
+
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Capacitance]
+  
+  \[
+  Q = C (\varphi_2 - \varphi_1) = CV
+  \]
+  
+  
+
+\end{tcolorbox} \mbox{} \\
+
+\noindent \textit{ \textbf{Parallel Plate Capacitor}}
+
+%5
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 10cm]{screenshot 171.png}
+    \caption{parallel plate capacitor}
+\end{figure}
+
+
+Assume a charge density $\pm \sigma$ \mbox{} \\
+
+Gauss's Law 
+
+\[
+E(z) A = \frac{\sigma A}{\varepsilon_0} \rightarrow E(z)
+= E = \frac{\sigma}{\varepsilon_0}
+\] \vspace{5px} 
+
+Potential Difference: 
+
+\[
+  \varphi(d) - \varphi(0) = -\int_0^d \vec{E} \cdot \hat{k} dz = E d
+\] \vspace{5px}
+
+Therefore, $V = E d$. If the plates have area  $A$, 
+
+\begin{align*}
+  & Q = \sigma A \\ 
+  & V = \frac{\sigma}{\varepsilon}d \\\\
+  & Q = \frac{\varepsilon_0 A}{d}V \\\\
+  & C = \frac{\varepsilon_0 A}{d}
+\end{align*}
+
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 12cm]{screenshot 172.png}
+    \caption{Finite sheet capacitor - fringing fields}
+\end{figure}
+
+
+
+\noindent \textit{ \textbf{Cylindrical Capacitor}}
+
+%6
+\begin{figure}[H]
+  \centering
+    \includegraphics[width = 14cm]{screenshot 173.png}
+    \caption{cylindrical capacitor}
+\end{figure}
+
+
+
+\begin{align*}
+  & E(r) A = \frac{Q}{\varepsilon} \\
+  & E(r) 2\pi r l = \frac{2 \pi a l \sigma}{\varepsilon_0} \\\\
+  & E(r) = \frac{\sigma}{\varepsilon_0} \frac{a}{r}
+\end{align*}
+
+\begin{align*}
+  \varphi(r) - \varphi(a) &= -\int_a^r \vec{E}(r) \cdot d\vec{r} \\
+                          &= -\int_a^r \frac{\sigma}{\varepsilon} \frac{a}{r}
+                          dr \\
+  \varphi(r) - \varphi(a) = -\frac{\sigma}{\varepsilon} a \ln \left(\frac{r}{a}
+  \right) \\ 
+\end{align*}
+
+\begin{align*}
+  & V = \varphi(a) - \varphi(b) \\
+  & V = -\frac{\sigma}{\varepsilon}a \left[ \ln (1) - \ln (b/a) \right] \\ \\
+  & V = \frac{\sigma}{\varepsilon}a\ln\left(\frac{b}{a}\right)
+\end{align*}
+
+\begin{align*}
+  &\frac{Q}{l} = 2 \pi a \sigma \\
+  &\frac{C}{l} = \frac{Q}{l} \frac{1}{V} = \frac{2\pi
+  a \sigma}{\frac{\sigma}{\varepsilon}a \ln (b/a)} \\\\
+  & \frac{C}{l} = \frac{2 \pi \varepsilon}{ \ln \left(\frac{b}{a}\right)}
+\end{align*}
+
+\end{document}
