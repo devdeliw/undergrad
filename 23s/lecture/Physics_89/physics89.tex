@@ -1713,6 +1713,299 @@ Vector Spaces, finite dimensional, defined over $\mathbb{R}$
 linear equations allow us to solve problems regarding finite dimensional vector
 spaces
 
+\noindent \textbf{Feb 14} \hrule
+\vspace{10px}
+\begin{itemize}
+  \item Review Last Week
+  \item Determinants
+\end{itemize}
+
+\section{Hilbert Spaces / Orthogonal Polynomials Review}
+
+"Distance" between two functions $f,g$ 
+
+ \[
+|| f - g ||^2 = \int (f-g)^2 dx 
+\] \vspace{5px} 
+
+\subsection{Legendre Polynomials}
+
+\[
+  || f - g ||^2 = \int_{-1}^1 (f-g)^2 dx
+\] \vspace{5px} 
+
+\subsection{Inner Product}
+
+Generalization of Dot Product: 
+
+\[
+\langle \hspace{2px} \vec{A} \hspace{2px} | \hspace{2px} \vec{B} \hspace{2px} \rangle 
+\] \vspace{5px} 
+
+Where $| \langle \hspace{2px} \vec{A}  \hspace{2px} | \hspace{2px} \vec{B}
+\hspace{2px} \rangle |^2 \geq 0$
+
+And 
+
+\[
+\cos^2 \theta = \frac{|\langle \hspace{2px} A \hspace{2px} | \hspace{2px}
+B \hspace{2px} \rangle |^2}{||A||^2 ||B||^2}
+\] \vspace{5px} 
+
+\subsection{Quantum Computing / Mechanics}
+
+bit 0 / bit 1 represented by two different vectors 
+
+\begin{center}
+  
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da39977773374894876] 
+\draw    (100,104) -- (100.97,48) ;
+\draw [shift={(101,46)}, rotate = 90.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6261535367485536] 
+\draw    (250,102) -- (302,100.07) ;
+\draw [shift={(304,100)}, rotate = 177.88] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (111,44.4) node [anchor=north west][inner sep=0.75pt]    {$A$};
+% Text Node
+\draw (295,111.4) node [anchor=north west][inner sep=0.75pt]    {$B$};
+% Text Node
+\draw (122,136.4) node [anchor=north west][inner sep=0.75pt]    {$\langle \ A\ |\ B\ \rangle \ =\ 0$};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\begin{center}
+  
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da5358387187871396] 
+\draw    (100,112) -- (194.4,41.2) ;
+\draw [shift={(196,40)}, rotate = 143.13] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8208475664134449] 
+\draw    (100,112) -- (204.08,142.44) ;
+\draw [shift={(206,143)}, rotate = 196.3] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (225,143.4) node [anchor=north west][inner sep=0.75pt]    {$B$};
+% Text Node
+\draw (208,28.4) node [anchor=north west][inner sep=0.75pt]    {$A$};
+% Text Node
+\draw (234,28) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\fontfamily{ptm}\selectfont Ground State of Atom}};
+% Text Node
+\draw (250,145) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\fontfamily{ptm}\selectfont Atom Later}};
+
+
+\end{tikzpicture}
+
+\end{center}
+
+\subsection{Legendre Polynomials}
+
+(i) \mbox{} \\
+HW1 $\rightarrow$ $\frac{1}{ \sqrt{1 - 2xt + t^2}} = \sum_{n=0}^{\infty} P_n(x)
+t^n$ \mbox{} \\\\
+
+\noindent (ii) \mbox{} \\
+
+\[
+  1, x, xnn^2, x^3, \dots \hspace{10px} \text{Gram Schmidt} \rightarrow P_0, P_1,
+  P_2
+\] \vspace{5px} 
+\[
+\langle \hspace{2px} P_n \hspace{2px} | \hspace{2px} P_n \hspace{2px} \rangle
+= \int_{-1}^{1} P_n (x) P_m(x) dx = 0 \hspace{10px} \text{if } m \neq n
+\] \vspace{5px} \mbox{} \\\\
+
+\noindent (iii) \mbox{} \\
+Solving 2nd Order ODE (Legendre's Eqn / Laplace's PDE)
+
+
+\subsection{Rank of a Matrix}
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Example 1]
+  
+  \begin{align*}
+    &x + y = 3 \\
+    & 7x + 4y = 11 
+  \end{align*}
+\[
+  \begin{pmatrix}
+    1 & 1 & 3 \\
+    7 & 7 & 11
+  \end{pmatrix} \rightarrow 
+  \begin{pmatrix}
+    1 & 1 & 3 \\
+    0 & 0 & -10
+  \end{pmatrix} \rightarrow \text{ No Soln } 
+\]
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Example 2]
+  
+  \begin{align*}
+    & x + y = 3 \\
+    & 7x + 7y = 21
+  \end{align*}
+
+  \[
+  \begin{pmatrix}
+    1 & 1 & 3 \\
+    7 & 7 & 21
+  \end{pmatrix} \rightarrow 
+  \begin{pmatrix}
+    1 & 1 & 3 \\ 
+    0 & 0 & 0
+  \end{pmatrix} \rightarrow \text{infinite solutions}
+  \] \vspace{5px} 
+  \begin{align*}
+    &x + y = 3 \\
+    &0 + 0 = 0
+  \end{align*} 
+  
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = General]
+  
+  \[
+  A \rightarrow 
+  \begin{pmatrix}
+    1 & 0 & 0 & \dots \\
+    0 & 1 & 0 & \\
+    0 & 0 & 1 & \\
+    0 & 0 & 0 & \ddots \\ 
+    \vdots &  & 
+  \end{pmatrix}
+  \] \vspace{5px} 
+  
+ Rank A $ = 4$ 
+
+\end{tcolorbox}
+
+Rank of a Matrix is the \# of non-zero rows \textbf{after} row reduction. 
+
+
+\section{Determinants}
+
+Objective: How to determine if system of vectors are linearly dependent or
+not. 
+\[
+  \vec{A}, \vec{B}, \vec{C} \hspace{10px} \text{linearly dependent?}
+\] \vspace{5px} 
+\[
+\alpha \vec{A} + \beta \vec{B} + \gamma \vec{C} = 0  
+\] \vspace{5px} 
+\[
+\alpha
+\begin{pmatrix}
+  a_1 \\ a_2\\ a_3
+\end{pmatrix} + 
+\beta
+\begin{pmatrix}
+  b_1 \\ b_2 \\ 3 
+\end{pmatrix} + 
+\gamma 
+\begin{pmatrix}
+  c_1 \\ c_2 \\ c_3 
+\end{pmatrix} = \vec{0}
+\] \vspace{5px} 
+\[
+M = \begin{pmatrix} 
+  a_1 & b_1 & c_1  \\
+  a_2 & b_2 & c_2 \\
+  a_3 & b_3 & c_3  
+\end{pmatrix} 
+\] \vspace{5px} 
+
+Is $\det M = 0?$
+
+\[
+ 2D \hspace{10px} \vec{A}, \vec{B} \text{ is linearly independent if } \det M \neq 0 
+\] \vspace{5px} 
+
+\paragraph{Calculating Determinant} \mbox{} \\
+
+1. Einstein Levi Civita Tensor: 
+
+\[
+  (\vec{A} \times \vec{B} ) \cdot \vec{C} = \sum_i \sum_j \sum_k A_i B_j C_k
+\] \vspace{5px} 
+2. Row Operations \mbox{} \\
+
+3. Calculate it normally: 
+
+\[
+\det \begin{pmatrix} 
+a_1 & b_1 & c_1 \\
+a_2 & b_2 & c_2 \\
+c_1 & c_2 & c_3 
+\end{pmatrix} 
+\] \vspace{5px}
+
+\paragraph{Properties of Determinants} \mbox{} \\
+
+\begin{itemize}
+  \item $\det(M^T) = \det M$
+  \item $\det (AB) = (\det A)(\det B)$
+\end{itemize}
+\vspace{5px}
+\textbf{Row Operations} \mbox{} \\
+(1) \\
+\[
+\begin{vmatrix} 
+a_1 & a_2 & a_3 \\ 
+b_1 & b_2 & b_3 \\
+c_1 & c_2 & c_3 
+\end{vmatrix}  = 
+- \begin{vmatrix} 
+a_1 & a_2 & a_3 \\ 
+c_1 & c_2 & c_3 \\
+b_1 & b_2 & b_3 
+\end{vmatrix} 
+\] \vspace{5px} 
+
+\[
+  (\vec{C} \times \vec{B}) \cdot \vec{A} = - (\vec{A} \times \vec{B} ) \cdot
+  \vec{C}
+\] \vspace{5px} 
+(2) \\
+\[
+\begin{vmatrix} 
+a_1 & a_2 & a_3 \ 
+\lambda b_1 & \lambda b_2 & \lambda b_3 \ 
+c_1 & c_2 & c_3 
+\end{vmatrix} = \lambda \begin{vmatrix} 
+a_1 & a_2 & a_3 \\
+b_1 & b_2 & b_3 \\
+c_1 & c_2 & c_3 
+\end{vmatrix} \mbox{} \\
+\] \vspace{5px} 
+
+
+\paragraph{Algorithm to compute Determinant} \mbox{} \\
+
+\begin{itemize}
+  \item perform row operations keep track of (-) signs and constants
+    multiplied. 
+\end{itemize}
+
+
+
 
 \end{document}  
 
