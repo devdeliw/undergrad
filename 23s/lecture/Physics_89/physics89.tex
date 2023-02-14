@@ -30,7 +30,7 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{lipsum}
-
+\newtheorem{theorem}{Theorem}
 
 \title{Physics 89 - Introduction to Mathematical Physics}
 \author{deval deliwala}
@@ -1455,7 +1455,7 @@ Functions $f(x)$ are also vector spaces since
 
 \begin{align*}
   |\langle \vec{A} \big| \vec{B} \rangle |^2 \leq |\vec{A}|^2 |\vec{B}|^2 \hspace{10px}
-  \text{Cauchy-Schwarz Inequality}
+  \text{Cauchy-Schwartz Inequality}
 \end{align*}
 
 \paragraph{Algorithm}
@@ -1471,8 +1471,247 @@ f_1, f_2, f_3
 \vec{e_2} \rightarrow \vec{u_2} = f_2 - (\vec{e_1}\vec{f_2})\vec{e_1} + \dots
 \]
 
+\newpage
+\noindent \textbf{Feb 7} \hrule
+\vspace{10px}
+\section{Hilbert Spaces}
+
+V: Finite dimensional vector space; over $\mathbb{R}, \mathbb{C}$
+\mbox{} \\\\
+What makes a vector space? 
+
+\begin{align*}
+  &v + w = c \\
+  &\lambda v \\
+  &\text{ an inner product} \hspace{10px} \langle A | B \rangle \in \mathbb{C}
+\end{align*}
+
+\noindent $
+  | A \rangle \in V \hspace{10px} \text{notation for elements in a set, } V
+$ \mbox{} \\\\
+Norm: $|| A || ^2 = \langle A | A \rangle \geq 0, \in \mathbb{R}$,
+$ \sqrt{\langle A | \rangle} \geq 0$
+\mbox{}\\\\
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Warnings]
+  
+  \begin{itemize}
+    \item inner products may not always satisfy $ || \hspace{5px} ||^2 \geq 0$ 
+      \begin{itemize}
+        \item even for Hilbert spaces, often allowing this fact
+      \end{itemize}
+    \item \textbf{separable} or not? (being able to count the bases of an
+      inf-dim vector space
+  \end{itemize}
+
+\end{tcolorbox}
+
+\subsection{Generalizing definition for Finite Dimensional Vector Spaces}
+
+V with a positive definite inner product, (finite or infinite dimensional) is called
+a \textit{Hilbert Space} if and only if this condition holds: V is
+\textbf{"complete"}
+\vspace{5px}
+
+For an infinite dimensional space to be considered \textit{complete}: You
+consider a \textbf{Cauchy Sequence}: 
+
+\[
+A_m \hspace{10px} (1,2,\dots), || A_m - A_n || \leq \varepsilon \text{ as m,n
+$\rightarrow \infty$}
+\] \vspace{5px}
+V is complete if and only if for each Cauchy Sequence $\exists A \in V$
+
+\paragraph{Hilbert Spaces} 
+
+\begin{align*}
+  &\langle A | B + C \rangle = \langle A | B \rangle + \langle A | c \rangle \\
+  &\langle A | \lambda B \rangle = \lambda \langle A | B \rangle \\
+  &\langle A | B \rangle^\ast = \langle B | A \rangle \\
+  &\langle \lambda A | B \rangle = \lambda^\ast \langle A | B \rangle 
+\end{align*}
+\mbox{}\\\\
+\textit{ \textbf{Example 1}}: $\mathbb{C} $
+
+\[
+  A = \begin{pmatrix} A_1 \\ A_2 \\ \vdots \\ A_n \end{pmatrix}, \hspace{10px}
+  A_i, \hspace{10px} \langle A | B \rangle = \sum_{k=1}^n A_k^\ast B_k 
+\] \vspace{5px}
+
+\noindent \textit{ \textbf{Example 2}}: $l_2$
+
+\begin{align*}
+ l_2 = V \ni A = \langle A_1, A_2 , \dots , A_k, \dots \rangle, \hspace{10px}
+  \sum_{n=1}^{\infty} |A_n|^2 < \infty
+\end{align*}
+
+\begin{theorem}
+All $\infty$ dimensional separable Hilbert spaces are isomorphic to $l_2$
+\end{theorem} \vspace{20px} 
+
+\noindent \textbf{ \textit{Example 3}}: $L_2 ([a, b])$
+\mbox{}\\\\
+Hilbert Spaces: $H$:
+
+ \[
+\int_a^b f(x)^\ast g(x) dx
+\] \vspace{5px}
+
+continuous functions are not complete!
+\mbox{}\\\\
+
+\textit{ \textbf{Example 4:}}: $L_2(\mathbb{R}$
+
+\[
+  \langle f | g \rangle = \int_{-\infty}^{\infty} f(x)^\ast g(x) dx
+\]
+\mbox{}\\\\
+
+\textit{ \textbf{Example 5}}: $L_2(S^1)$, $f(x+2\pi) = f(x) \hspace{10px} x \in
+S^1$
+
+\[
+  \langle f | g \rangle = \int_0^{2\pi} f(x)^\ast g(x) dx 
+\] \vspace{20px}
+
+\paragraph{Cauchy-Schwarz ineq} 
+
+\[
+ | \langle A | B \rangle |^2 \leq ||A||^2 ||B||^2
+\]
+
+\textbf{Ex.}: $l_2$
+
+\begin{align*}
+  &A = (1, \alpha, \alpha^2, \alpha^3, \dots)  \hspace{10px} |\alpha| < 1 \\
+  &B = (1, \beta, \beta^2, \beta^3, \dots)  \hspace{10px} |\beta| < 1 
+\end{align*}
 
 
+\subsection{Bases for Hilbert Spaces}
+
+\[
+  e_1, e_2, \dots \hspace{10px} \text{ such that } A = \sum_{n=1}^{\infty} A_n
+  e_n 
+\] \vspace{5px}
+
+\textit{Orthonormal Basis} 
+\[
+  \langle e_n | e_m \rangle = \delta_{nm}
+\]
+
+\[
+\langle e_m | A \rangle = \langle e_m | \sum A_n e_n \rangle = \sum A_n \langle
+e_m | e_n \rangle = \sum A_n \delta_{nm} = A_m
+\]
+
+\begin{align*}
+  ||A||^2 = \sum_{n=1}^{\infty} |A_n|^2
+\end{align*}
+
+\textbf{Example 1.}: $l_2$ 
+
+\[
+e_n = (0, \dots 0, 1, 0, \dots) 
+\]
+\newpage
+\noindent \textbf{Feb 9} \hrule
+\vspace{10px}
+\textit{ \textbf{Example 2}}
+ 
+\[
+  H: \text{orthonormal basis formed from Gram Schmidt} f_0, f_1, \dots, f_n,
+  \dots f_{\infty} 
+\]
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Gram Schmidt]
+  
+  \begin{align*}
+    &u_0, u_1, \dots, u_n, \dots \hspace{10px} n \in \mathbb{N} \\\\
+    &e_0 = \frac{u_0}{||u_0||}, u_1 = \langle e_0 | u_1 \rangle e_0,
+    \hspace{10px} e_1 = \frac{u_1}{||u_1||}
+  \end{align*}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Legendre Polynomials]
+  
+  \[
+    L_2([-1, +1]); \langle f | g \rangle = \int_{-1}^1 f^\ast (x) g(x) dx
+  \]
+  Legendre \hspace{10px} $f_0 = 1, f_1 = x, f_2 = x^2$ form the basis for
+  a hilbert space 
+
+  \[
+    e_0 = \frac{2}{\sqrt{2}}, e_1 = \sqrt{\frac{3}{2}}, e_2
+    = \sqrt{\frac{5}{2}}\left( \frac{3}{2}x^2 - \frac{1}{2} \right), \dots 
+  \]
+  \[
+    e_n = \sqrt{\frac{2n+1}{2}}P_n(x) \rightarrow \text{ Legendre Polynomial } 
+  \]
+\end{tcolorbox}
+\mbox{} \\\\
+
+\textit{ \textbf{Example 3}}: \textit{Hermite Polynomials}
+
+\[
+f(x), -\infty < x < \infty \hspace{10px} \hspace{10px} \langle f | g \rangle
+= \int_{-\infty}^{\infty} f^\ast (x) g(x) e^{-x^2} dx
+\]
+\[
+  f(x), g(x) \in \mathbb{C} \text{ where } \langle f | \lambda g \rangle
+  = \lambda \langle f | g \rangle, \text{ and } \langle \lambda f \hspace{5px}
+  | \hspace{5px} g \rangle  \hspace{10px} \lambda \in \mathbb{C}
+\] \vspace{5px}
+
+
+\begin{tcolorbox}[colback = blue!5!white, colframe = blue!50!black, title
+  = Gaussian Integrals]
+  
+  Used in the quantum theory of harmonic oscillators. 
+
+  \[
+    \int_{-\infty}^{\infty} x^m e^{-x^2} dx
+  \]
+  \begin{align*}
+    &m = 0 \\
+    &\int e^{-x^2} = \sqrt{\pi}
+  \end{align*}
+  
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback = red!5!white, colframe = red!50!black, title
+  = Solving Gaussian Integrals]
+  
+  \begin{align*}
+    &\left( \int_{\infty}^{\infty} e^{-x^2} dx \right)^2 \\
+    &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{-x^2y^2} dydx \\\\
+    &x = r\cos\theta \hspace{10px}
+    y = r\sin\theta \\\\
+    &= \int_0^{2\pi} d\theta \int_0^{\infty} rdr e^{-r^2} = \int_0^{2\pi}
+    d\theta = \frac{1}{2} \int_0^{2\pi} dw e^{-w}
+  \end{align*}
+
+\end{tcolorbox}
+
+\begin{align*}
+  &\text{let } e_0, e_1, e_2, \dots, e_n = \frac{H_n(x)}{ \sqrt{ \sqrt{\pi} 2^n
+  n!}} \hspace{60px} \text{Hermite Polynomials} \\
+  &\text{where } e_0, e_1, \dots = {1, x, x^2, x^3, \dots, x^n, \dots } \\\\
+  &H_0 = 1, H_1 = 2x, H_2 = 4x^2 - 2, H_3(x) = 8x^3 - 12x
+\end{align*}
+\newpage
+\section{Matrices} 
+
+Vector Spaces, finite dimensional, defined over $\mathbb{R}$ 
+\[
+\dim V = n
+\]
+
+linear equations allow us to solve problems regarding finite dimensional vector
+spaces
 
 
 \end{document}  
